@@ -1,0 +1,98 @@
+@import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+
+:root {
+    --primary-color: #facce2;
+    --secondary-color: #ed6ba9;
+    --shade1: #db9dbd;
+    --shade2: #efb1c9;
+    --shade3: #c78faa;
+    --shade4: #d0b0bb;
+    --shade5: #915874;
+    --shade6: #ba5686;
+}
+
+body {
+    margin: 0;
+    font-family: 'Anonymous Pro', sans-serif;
+}
+
+.topNav {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    background-color: var(--primary-color);
+}
+
+.navContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--shade6);
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.fa-home {
+    font-size: larger;
+    cursor: pointer;
+}
+
+.profile-container {
+    position: relative;
+}
+
+.background-picture img {
+    width: 100%;
+    height: auto;
+}
+
+.profile-info {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.profile-picture img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.Name,
+.Username,
+.Bio {
+    margin: 5px 0;
+}
+
+.Bio {
+    color: #333; 
+    background-color: #fff; 
+    padding: 10px; 
+    border-radius: 5px; 
+}
+
+button {
+    background-color: var(--secondary-color);
+    font-family: 'Jost', sans-serif;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--shade6);
+}

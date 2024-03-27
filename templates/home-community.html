@@ -1,0 +1,32 @@
+<html>
+  <link rel="stylesheet" type="{{ url_for('static', filename='css/style.css') }}" />
+  <script type="text/javascript">
+        function redirectToHome() {
+            window.location.href = "{{ url_for('home') }}";
+        }
+    </script>
+  <div class="header"></div>
+  <body>
+    <div title = "nav bar" class = "topNav">
+      <h2>Amicitia</h2>
+    <!-- <div>
+    </div> -->
+    </div>
+    <div title="leftColumn" class="leftColumn" style="position: fixed; top: 10%; left: 0; background-color: var(--shade1)">
+        <button onclick = redirectToHome()>
+            <h1>Match with Friends</h1>
+        </button>
+
+    </div>
+    <div title="centerColumn" class="centerColumn" style="position: absolute; top: 10%; left: 10%; background-color: white">
+      <ul style="align-content: right; background-color: var(--shade1); margin: 10px; padding: 50px; border-radius: 15px;">
+        <div class="matchingPic" style="background-color: var(--shade3)"></div>
+        <hr/>
+      </ul>
+
+    </div>
+    <div title="rightColumn" class="rightColumn"style=" position: fixed; top: 0px;right: 0%; background-color: blue">
+      <h1>Chats</h1>
+    </div>
+  </body>
+<html>
