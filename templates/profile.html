@@ -5,14 +5,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Profile Page</title>
-    <script src="{{ url_for('static', filename='js/profile.js') }}"></script>
+    <script src="static/js/profile.js"></script>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/profile.css') }}" />
 </head>
 <body>
     <!--Updated Nav bar-->
     <div class="topNav">
         <div class="navContent">
-            <h2>Amicitia</h2>
+            <h2 class="brand">Amicitia</h2>
             <div class="dropdown">
                 <i class="fa fa-cog" onclick="toggleDropdown(event)"></i>
                 <div class="dropdown-content">
@@ -20,18 +20,15 @@
                     <a onclick="logout()">Logout</a> <!--redirected to create account page-->
                 </div>
             </div>
-            <i class="fa fa-home" onclick="redirectToHome()"></i>
+            <i class="fa fa-home" onclick="redirectToHomeCommunity()"></i>
         </div>
     </div>
     
     <!-- Profile Section -->
     <div class="profile-container">
-        <div class="background-picture">
-            <img src="https://img.freepik.com/free-photo/pink-yellow-plain-background_53876-98329.jpg?w=1060&t=st=1710207279~exp=1710207879~hmac=346cae9a0511e8cea7f2869d5b2c07f1101c7a9de40b9bcfa299d7086f51ad0c" alt="Background Picture">
-        </div>
         <div class="profile-info">
             <div class="profile-picture">
-                <img src="https://i.pinimg.com/originals/31/ce/4e/31ce4ec91de94fc4aa81fbf89b07c430.png" alt="Profile Picture">
+                <img src="https://cdn.iconscout.com/icon/free/png-256/free-user-1648810-1401302.png?f=webp" alt="Profile Picture">
             </div>
             <h1 class="Name">Name</h1>
             <h2 class="Username">Username</h2>
