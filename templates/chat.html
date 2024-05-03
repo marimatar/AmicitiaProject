@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group Chat</title>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Anonymous+Pro">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/chat.css') }}"> 
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/navbar.css') }}"> 
+    <script src="static/js/chattemp.js"></script>
+    <script src="static/js/profile.js"></script>
+</head>
+<body>
+    <!--Updated Nav bar-->
+    <div class="topNav">
+        <div class="navContent">
+            <h2 class="brand">Amicitia</h2>
+            <div class="dropdown">
+                <i class="fa fa-cog" onclick="toggleDropdown(event)"></i>
+                <div class="dropdown-content">
+                    <a onclick="redirectToProfilePage()">Profile Settings</a>
+                    <a onclick="logout()">Logout</a> <!--redirected to create account page-->
+                </div>
+            </div>
+            <i class="fa fa-home" onclick="redirectToHomeCommunity()"></i>
+        </div>
+    </div>
+
+    <!-- Chat Section-->
+    <div class="chat-container">
+        <div class="messages-container" id="messages-container">
+            <!-- Existing messages will appear here -->
+        </div>
+        <div class="input-container">
+            <input type="text" id="message-input" placeholder="Type your message here...">
+            <button id="send-button"><i class="fas fa-paper-plane"></i></button> 
+        </div>
+    </div>
+</body>
+</html>
