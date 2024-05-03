@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap');
+
+:root {
+    --primary-color: #5de0e6;
+    --secondary-color: #004aad;
+    --shade1: #f0f2f5;
+    --text-color: #333;
+}
+
+body {
+    font-family: 'Anonymous Pro', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--shade1);
+}
+
+#group-chat {
+    width: 80%;
+    text-align: center;
+}
+
+.user {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #fff;
+}
+
+.user h2 {
+    margin: 0;
+}
+
+.user p {
+    margin: 5px 0;
+}
+
+.user button {
+    padding: 5px 10px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.user button:hover {
+    background-color: #ddd;
+}

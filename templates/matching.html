@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group Chat</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/matching.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/navbar.css') }}" />
+</head>
+<body>
+<!--Updated Nav bar-->
+<div class="topNav">
+    <div class="navContent">
+        <h2 class="brand">Amicitia</h2>
+        <div class="dropdown">
+            <i class="fa fa-cog" onclick="toggleDropdown(event)"></i>
+            <div class="dropdown-content">
+                <a onclick="redirectToProfilePage()">Profile Settings</a>
+                <a onclick="logout()">Logout</a> <!--redirected to create account page-->
+            </div>
+        </div>
+        <i class="fa fa-home" onclick="redirectToHomeCommunity()"></i>
+    </div>
+</div>
+
+    <!-- Matching Section-->
+    <section id="group-chat">
+        <h1>Creating Group Chat With:</h1>
+        <div id="users">
+            {% for user_id, user_data in users.items() %}
+                <div class="user">
+                    <h2>{{ user_data.name }}</h2>
+                    {% if user_id == current_user_id %}
+                        <p>Ready to join?</p>
+                        <button onclick="joinGroup('{{ user_id }}')">Join</button>
+                        <button onclick="quit('{{ user_id }}')">Quit</button>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <script>
+        function joinGroup(user_id) {
+            // Handle joining group
+            alert('Joined group chat with ' + user_id);
+        }
+
+        function quit(user_id) {
+            // Handle quitting group
+            alert('Quit group chat with ' + user_id);
+        }
+    </script>
+</body>
+</html>
