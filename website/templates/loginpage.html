@@ -4,7 +4,7 @@
 	<title>Login/Signup Page</title>
     <script type="text/javascript">
         function redirectToHome() {
-            window.location.href = "{{ url_for('home') }}";
+            window.location.href = "{{ url_for('views.home') }}";
         }
     </script>
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/loginpage.css') }}">

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Matching Page</title>
+    <script src="static/js/profile.js"></script>
+    <!--  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/navbar.css') }}" /> -->
+    <style>
+        /* CSS styles temp placement bc i can't run anything..ik the nav bar is weird but ill fix it later when db is set up*/
+
+        :root {
+            --primary-color: #5de0e6;
+            --secondary-color: #004aad;
+            --shade1: #5dbec6;
+        }
+
+        .topNav {
+            position: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 10%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 999;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            color: white;
+        }
+
+        .brand {
+            font-family: 'Great Vibes', cursive;
+            font-size: 40px;
+        }
+
+        .navContent {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--shade6);
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: calc(100% + 10px);
+            right: 0;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .fa-home {
+            font-size: larger;
+            cursor: pointer;
+            color:white;
+            font-size: 36px;
+        }
+
+        .fa-cog {
+            font-size: larger;
+            cursor: pointer;
+            margin-left: 900px;
+            color: white;
+            font-size: 36px;
+        }
+
+        /* Profile Style */
+        .profiles-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 100px;
+        }
+
+        .profile {
+            text-align: center;
+            margin: 5px;
+        }
+
+        .profile-picture img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%; /* Make it a circle */
+            border: 3px solid #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .name,
+        .username {
+            margin: 3px 0;
+            font-family: 'Jost', sans-serif;
+        }
+
+        button {
+            background-color: var(--shade1);
+            font-family: 'Jost', sans-serif;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: var(--shade1);
+        }
+
+        /* New styles for status indicators */
+        .status-circle {
+            position: relative;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: transparent;
+            margin: -25px auto 5px auto;
+        }
+
+        .status {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .status.yes {
+            background-color: green;
+        }
+
+        .status.no {
+            background-color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <!--Updated Nav bar-->
+    <div class="topNav">
+        <div class="navContent">
+            <h2 class="brand">Amicitia</h2>
+            <div class="dropdown">
+                <i class="fa fa-cog" onclick="toggleDropdown(event)"></i>
+                <div class="dropdown-content">
+                    <a onclick="redirectToProfilePage()">Profile Settings</a>
+                    <a onclick="logout()">Logout</a> <!--redirected to create account page-->
+                </div>
+            </div>
+            <i class="fa fa-home" onclick="redirectToHomeCommunity()"></i>
+        </div>
+    </div>
+
+    <!-- Profile Section -->
+    <div class="profile-container">
+        <div class="profiles-container">
+            <!-- Profile 1 -->
+            <div class="profile">
+                <!-- Profile content -->
+                <div class="profile-picture">
+                    <div class="status-circle">
+                        <div class="status" id="user1-status"></div>
+                    </div>
+                    <img src="https://cdn.iconscout.com/icon/free/png-256/free-user-1648810-1401302.png?f=webp" alt="Profile Picture">
+                </div>
+                <h1 class="name">User 1</h1>
+                <h2 class="username">Username</h2>
+            </div>
+
+            <!-- Profile 2 -->
+            <div class="profile">
+                <!-- Profile content -->
+                <div class="profile-picture">
+                    <div class="status-circle">
+                        <div class="status" id="user2-status"></div>
+                    </div>
+                    <img src="https://cdn.iconscout.com/icon/free/png-256/free-user-1648810-1401302.png?f=webp" alt="Profile Picture">
+                </div>
+                <h1 class="name">User 2</h1>
+                <h2 class="username">Username</h2>
+            </div>
+
+            <!-- Profile 3 -->
+            <div class="profile">
+                <!-- Profile content -->
+                <div class="profile-picture">
+                    <div class="status-circle">
+                        <div class="status" id="user3-status"></div>
+                    </div>
+                    <img src="https://cdn.iconscout.com/icon/free/png-256/free-user-1648810-1401302.png?f=webp" alt="Profile Picture">
+                </div>
+                <h1 class="name">User 3</h1>
+                <h2 class="username">Username</h2>
+            </div>
+        </div>
+    </div>
+
+    <!--Group Chat Creation-->
+    <p> Ready to Start Chatting?</p>
+    <button class="confirm-btn" onclick="startChat()">Yes</button>
+    <button class="decline-btn" onclick="declineChat()">No</button>
+
+    <script>
+        // temp js code
+        function startChat() {
+            document.getElementById("user1-status").classList.add("yes");
+        }
+
+        function declineChat() {
+            document.getElementById("user1-status").classList.add("no");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatroom</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-oqdG8IXZCmtzRY0TaifWQzizB1C5hI7bsKGvR2zls3DPpC/JTMm4KlKl3jjsz1gt" crossorigin="anonymous">
+    <style>
+        /* CSS styles temp placement bc i can't run anything..ik the nav bar is weird but ill fix it later when db is set up*/
+
+        :root {
+            --primary-color: #5de0e6;
+            --secondary-color: #004aad;
+            --shade1: #5dbec6;
+        }
+
+        .topNav {
+            position: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 10%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 999;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            color: white;
+        }
+
+        .brand {
+            font-family: 'Great Vibes', cursive;
+            font-size: 40px;
+        }
+
+        .navContent {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--shade6);
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: calc(100% + 10px);
+            right: 0;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .fa-home {
+            font-size: larger;
+            cursor: pointer;
+            color:white;
+            font-size: 36px;
+        }
+
+        .fa-cog {
+            font-size: larger;
+            cursor: pointer;
+            margin-left: 900px;
+            color: white;
+            font-size: 36px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            height: 80vh; /* Adjust the height as needed */
+        }
+
+        .chat-container {
+            display: flex;
+            flex-direction: column;
+            background-color: var(--shade1);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            max-width: 800px;
+            width: 100%;
+            height: 400px;
+            overflow: auto;
+        }
+
+        .chat-messages {
+            overflow-y: auto;
+            flex-grow: 1;
+            margin-bottom: auto;
+        }
+
+        .chat-input-form {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .chat-input {
+            flex-grow: 1;
+            padding: 10px;
+            border-radius: 4px;
+            border: none;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .send-button,
+        .clear-chat-button {
+            margin-left: 10px;
+            padding: 10px 20px;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .send-button {
+            background-color: #1c9bef;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Nav Bar -->
+    <div class="topNav">
+        <h2 class="brand">Amicitia</h2>
+        <div class="dropdown">
+            <i class="fas fa-cog" onclick="toggleDropdown(event)"></i>
+            <div class="dropdown-content">
+                <a onclick="redirectToProfilePage()">Profile Settings</a>
+                <a onclick="logout()">Logout</a>
+            </div>
+        </div>
+        <i class="fas fa-home" onclick="redirectToHomeCommunity()"></i>
+    </div>
+
+    <!-- Chat Container -->
+    <div class="container">
+        <div class="chat-container">
+            <div class="chat-messages">
+                <!-- Messages will appear here -->
+            </div>
+            <form class="chat-input-form">
+                <input type="text" class="chat-input" required placeholder="Type here..." />
+                <button type="submit" class="send-button">Send</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript this is temp, just to show messages -->
+    <script>
+        function toggleDropdown(event) {
+            const dropdownContent = event.target.nextElementSibling;
+            dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function redirectToProfilePage() {
+            window.location.href = "{{ url_for('profile') }}";
+        }
+
+        function logout() {
+            window.location.href = "{{ url_for('logout') }}";
+        }
+
+        function redirectToHomeCommunity() {
+            window.location.href = "{{ url_for('homecommunity') }}";
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const chatForm = document.querySelector('.chat-input-form');
+            const chatMessages = document.querySelector('.chat-messages');
+
+            chatForm.addEventListener('submit', function (event) {
+                event.preventDefault(); // Prevent form submission
+
+                const chatInput = document.querySelector('.chat-input');
+                const messageText = chatInput.value.trim();
+
+                if (messageText !== '') {
+                    const messageElement = document.createElement('div');
+                    messageElement.classList.add('message');
+                    messageElement.textContent = messageText;
+
+                    chatMessages.appendChild(messageElement);
+
+                    // Scroll to the bottom of chat messages
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+
+                    // Clear the input field after sending the message
+                    chatInput.value = '';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
