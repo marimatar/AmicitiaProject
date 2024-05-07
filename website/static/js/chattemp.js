@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const messagesContainer =
+    const messagesContainer = 
 document.getElementById('messages-container');
     const messageInput = document.getElementById('message-input');
     const sendButton = document.getElementById('send-button');

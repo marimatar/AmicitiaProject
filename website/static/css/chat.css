@@ -1,4 +1,4 @@
-@import
+@import 
 url('https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap');
 
 :root {
@@ -40,8 +40,8 @@ body {
 }
 
 .user-message {
-    background-color: var(--primary-color);
-    color: #fff;
+    background-color: var(--primary-color); 
+    color: #fff; 
     align-self: flex-end;
 }
 
@@ -66,3 +66,4 @@ body {
 #send-button:hover {
     background-color: #45d2d9;
 }
+
