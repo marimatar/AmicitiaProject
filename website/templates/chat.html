@@ -178,18 +178,6 @@
             dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
         }
 
-        function redirectToProfilePage() {
-            window.location.href = "{{ url_for('profile') }}";
-        }
-
-        function logout() {
-            window.location.href = "{{ url_for('logout') }}";
-        }
-
-        function redirectToHomeCommunity() {
-            window.location.href = "{{ url_for('homecommunity') }}";
-        }
-
         document.addEventListener('DOMContentLoaded', function () {
             const chatForm = document.querySelector('.chat-input-form');
             const chatMessages = document.querySelector('.chat-messages');
