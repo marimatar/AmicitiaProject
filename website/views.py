@@ -16,7 +16,7 @@ def home():  # put application's code here
     return render_template('home.html')
 
 
-@views.route('/loginpage')
+@views.route('/login')
 def loginpage():
     return render_template('loginpage.html')
 
