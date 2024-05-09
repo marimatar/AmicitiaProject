@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Chatroom</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-oqdG8IXZCmtzRY0TaifWQzizB1C5hI7bsKGvR2zls3DPpC/JTMm4KlKl3jjsz1gt" crossorigin="anonymous">
     <style>
-        /* CSS styles temp placement bc i can't run anything..ik the nav bar is weird but ill fix it later when db is set up*/
-
-        :root {
+       :root {
             --primary-color: #5de0e6;
             --secondary-color: #004aad;
             --shade1: #5dbec6;
@@ -87,122 +86,286 @@
             color: white;
             font-size: 36px;
         }
-
-        .container {
-            display: flex;
-            justify-content: center;
-            align-items: flex-end;
-            height: 80vh; /* Adjust the height as needed */
-        }
-
-        .chat-container {
-            display: flex;
-            flex-direction: column;
-            background-color: var(--shade1);
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            max-width: 800px;
-            width: 100%;
-            height: 400px;
-            overflow: auto;
-        }
-
-        .chat-messages {
-            overflow-y: auto;
-            flex-grow: 1;
-            margin-bottom: auto;
-        }
-
-        .chat-input-form {
-            margin-top: 20px;
-            display: flex;
-            align-items: center;
-        }
-
-        .chat-input {
-            flex-grow: 1;
-            padding: 10px;
-            border-radius: 4px;
-            border: none;
-            background-color: #f5f5f5;
-            color: #333;
-        }
-
-        .send-button,
-        .clear-chat-button {
-            margin-left: 10px;
-            padding: 10px 20px;
-            border-radius: 4px;
-            border: none;
-            cursor: pointer;
-        }
-
-        .send-button {
-            background-color: #1c9bef;
-            color: white;
-        }
+      body {
+    background-image: linear-gradient(
+      23deg,
+      var(--primary-color) 0%,
+      var(--secondary-color) 2%,
+      var(--shade1) 12%,
+      hsl(259deg 100% 15%) 50%,
+      hsl(212deg 100% 25%) 88%,
+      hsl(197deg 100% 30%) 98%,
+      hsl(183deg 79% 36%) 100%
+    );
+    height: 90vh;
+    padding-top: 10%;
+  }
+  
+  .button {
+    border: none;
+    padding: 0.625em;
+    border-radius: 0.5em;
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    filter: brightness(0.9);
+  }
+  
+  .button:active {
+    transform: translateY(2px);
+  }
+  
+  .person-selector {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    margin: 3em auto 1em;
+    max-width: 40em;
+  }
+  
+  .person-selector-button {
+    width: 100%;
+    background-color: var(--secondary-color);
+    color: #fff;
+    font-size: 1.1em;
+  }
+  
+  .active-person {
+    background: #08529d;
+    box-shadow: 0 0 0.5em 0.1em #c3c3c333;
+  }
+  
+  .chat-container {
+    background: var(--secondary-color);
+    font-family: 'Roboto', sans-serif;
+    border-radius: 0.5em;
+    padding: 0.5em 1.25em;
+    margin: auto;
+    max-width: 37.5em;
+    height: 37.5em;
+    box-shadow: 0 0 1.25em 0.5em #c3c3c333;
+  }
+  
+  .chat-header {
+    margin-bottom: 1em;
+    color: #fff;
+  }
+  
+  .chat-header h2 {
+    font-size: 1.25em;
+    font-weight: bold;
+  }
+  
+  .chat-messages {
+    height: 23em;
+    overflow-y: scroll;
+  }
+  
+  .chat-messages::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .message {
+    padding: 0.625em;
+    border-radius: 1em;
+    margin-bottom: 0.625em;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+  }
+  
+  .message-sender {
+    font-weight: bold;
+    margin-bottom: 0.31em;
+  }
+  
+  .message-text {
+    font-size: 1em;
+    margin-bottom: 0.31em;
+    word-wrap: break-word;
+  }
+  
+  .message-timestamp {
+    font-size: 0.75em;
+    text-align: right;
+  }
+  
+  .blue-bg {
+    background-color: #1c9bef;
+  }
+  
+  .gray-bg {
+    background-color: #3d5365;
+  }
+  
+  .chat-input-form {
+    display: flex;
+    align-items: center;
+    margin-top: 2em;
+    gap: 0.625em;
+  }
+  
+  .chat-input {
+    padding: 0.625em;
+    border: none;
+    border-radius: 0.5em;
+    background-color: #f5f5f5;
+    color: #333;
+    font-size: 1em;
+    flex-grow: 1;
+  }
+  
+  .send-button {
+    background-color: #1c9bef;
+    color: #fff;
+    font-size: 1em;
+    font-weight: bold;
+  }
+  
+  .clear-chat-button {
+    display: block;
+    margin: 2.5em auto;
+  }
     </style>
-</head>
-<body>
-    <!-- Nav Bar -->
-    <div class="topNav">
-        <h2 class="brand">Amicitia</h2>
-        <div class="dropdown">
-            <i class="fas fa-cog" onclick="toggleDropdown(event)"></i>
-            <div class="dropdown-content">
-                <a onclick="redirectToProfilePage()">Profile Settings</a>
-                <a onclick="logout()">Logout</a>
-            </div>
+  </head>
+  <body>
+     <!--Updated Nav bar-->
+     <div class="topNav">
+      <div class="navContent">
+          <h2 class="brand">Amicitia</h2>
+          <div class="dropdown">
+              <i class="fa fa-cog" onclick="toggleDropdown(event)"></i>
+              <div class="dropdown-content">
+                  <a onclick="redirectToProfilePage()">Profile Settings</a>
+                  <a onclick="logout()">Logout</a> <!--redirected to create account page-->
+              </div>
+          </div>
+          <i class="fa fa-home" onclick="redirectToHomeCommunity()"></i>
+      </div>
+  </div>
+  
+    <!-- Person selector: this contains buttons for user to select whether to chat as -->
+    <div class="person-selector">
+      <button class="button person-selector-button active-person" id="apple-selector">Apple</button>
+      <button class="button person-selector-button" id="orange-selector">Orange</button>
+      <button class="button person-selector-button" id="lemon-selector">Lemon</button>
+    </div>
+    <div class="chat-container">
+      <h2 class="chat-header">Apple chatting...</h2>
+      
+      <div class="chat-messages">
+       
+        <div class="message blue-bg">
+          <div class="message-sender">Apple joined groupchat</div>
         </div>
-        <i class="fas fa-home" onclick="redirectToHomeCommunity()"></i>
+       
+        <div class="message gray-bg">
+          <div class="message-sender">Orange joined groupchat</div>
+        </div>
+
+        <div class="message gray-bg">
+          <div class="message-sender">Lemon joined groupchat</div>
+        </div>
+
+      </div>
+
+      <form class="chat-input-form">
+        <input type="text" class="chat-input" required placeholder="Type here, Apple..." />
+        <button type="submit" class="button send-button">Send</button>
+      </form>
+      <button class="button clear-chat-button">Clear Chat</button>
     </div>
 
-    <!-- Chat Container -->
-    <div class="container">
-        <div class="chat-container">
-            <div class="chat-messages">
-                <!-- Messages will appear here -->
-            </div>
-            <form class="chat-input-form">
-                <input type="text" class="chat-input" required placeholder="Type here..." />
-                <button type="submit" class="send-button">Send</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- JavaScript this is temp, just to show messages -->
     <script>
-        function toggleDropdown(event) {
-            const dropdownContent = event.target.nextElementSibling;
-            dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
-        }
 
-        document.addEventListener('DOMContentLoaded', function () {
-            const chatForm = document.querySelector('.chat-input-form');
-            const chatMessages = document.querySelector('.chat-messages');
+const appleSelectorBtn = document.querySelector('#apple-selector')
+const orangeSelectorBtn = document.querySelector('#orange-selector')
+const lemonSelectorBtn = document.querySelector('#lemon-selector')
+const chatHeader = document.querySelector('.chat-header')
+const chatMessages = document.querySelector('.chat-messages')
+const chatInputForm = document.querySelector('.chat-input-form')
+const chatInput = document.querySelector('.chat-input')
+const clearChatBtn = document.querySelector('.clear-chat-button')
 
-            chatForm.addEventListener('submit', function (event) {
-                event.preventDefault(); // Prevent form submission
+const messages = JSON.parse(localStorage.getItem('messages')) || []
 
-                const chatInput = document.querySelector('.chat-input');
-                const messageText = chatInput.value.trim();
+const createChatMessageElement = (message) => `
+  <div class="message ${message.sender === 'Apple' ? 'blue-bg' : 'gray-bg'}">
+    <div class="message-sender">${message.sender}</div>
+    <div class="message-text">${message.text}</div>
+    <div class="message-timestamp">${message.timestamp}</div>
+  </div>
+`
 
-                if (messageText !== '') {
-                    const messageElement = document.createElement('div');
-                    messageElement.classList.add('message');
-                    messageElement.textContent = messageText;
+window.onload = () => {
+  messages.forEach((message) => {
+    chatMessages.innerHTML += createChatMessageElement(message)
+  })
+}
 
-                    chatMessages.appendChild(messageElement);
+let messageSender = 'Apple'
 
-                    // Scroll to the bottom of chat messages
-                    chatMessages.scrollTop = chatMessages.scrollHeight;
+const updateMessageSender = (name) => {
+  messageSender = name
+  chatHeader.innerText = `${messageSender} chatting...`
+  chatInput.placeholder = `Type here, ${messageSender}...`
 
-                    // Clear the input field after sending the message
-                    chatInput.value = '';
-                }
-            });
-        });
+  if (name === 'Apple') {
+    AppleSelectorBtn.classList.add('active-person')
+    OrangeSelectorBtn.classList.remove('active-person')
+    LemonSelectorBtn.classList.remove('active-person')
+  }
+  if (name === 'Orange') {
+    AppleSelectorBtn.classList.remove('active-person')
+    OrangeSelectorBtn.classList.add('active-person')
+    LemonSelectorBtn.classList.remove('active-person')
+  }
+  if (name === 'Lemon') {
+    AppleSelectorBtn.classList.remove('active-person')
+    OrangeSelectorBtn.classList.remove('active-person')
+    LemonSelectorBtn.classList.add('active-person')
+  }
+  
+
+  /* auto-focus the input field */
+  chatInput.focus()
+}
+
+appleSelectorBtn.onclick = () => updateMessageSender('Apple')
+orangeSelectorBtn.onclick = () => updateMessageSender('Orange')
+lemonSelectorBtn.onclick = () => updateMessageSender('Lemon')
+
+const sendMessage = (e) => {
+  e.preventDefault()
+
+  const timestamp = new Date().toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
+  const message = {
+    sender: messageSender,
+    text: chatInput.value,
+    timestamp,
+  }
+
+  /* Save message to local storage */
+  messages.push(message)
+  localStorage.setItem('messages', JSON.stringify(messages))
+
+  /* Add message to DOM */
+  chatMessages.innerHTML += createChatMessageElement(message)
+
+  /* Clear input field */
+  chatInputForm.reset()
+
+  /*  Scroll to bottom of chat messages */
+  chatMessages.scrollTop = chatMessages.scrollHeight
+}
+
+chatInputForm.addEventListener('submit', sendMessage)
+
+clearChatBtn.addEventListener('click', () => {
+  localStorage.clear()
+  chatMessages.innerHTML = ''
+})
     </script>
-</body>
+  </body>
 </html>
