@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a56058a6-1cec-4758-84a0-cb8b6da48c47" name="Changes" comment="excluding .idea and .venv files">
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/instance/database.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/Details.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/Details.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/auth.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/templates/loginpage.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/templates/loginpage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/static/css/navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/website/static/css/navbar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/templates/base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,26 +55,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Flask server.Amicitia.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Amicitia.executor&quot;: &quot;Run&quot;,
-    &quot;Python.populate_db.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;databaseworks&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/mmata/PycharmProjects/Amicitia&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PythonContentEntriesConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Flask server.Amicitia.executor": "Run",
+    "Python.Amicitia.executor": "Run",
+    "Python.populate_db.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "backendloginupdates",
+    "last_opened_file_path": "C:/Users/mmata/PycharmProjects/Amicitia",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PythonContentEntriesConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\mmata\PycharmProjects\Amicitia\website" />
@@ -183,7 +179,7 @@
       <workItem from="1714619595724" duration="7026000" />
       <workItem from="1715052179609" duration="18029000" />
       <workItem from="1715075848726" duration="2840000" />
-      <workItem from="1715276438942" duration="11547000" />
+      <workItem from="1715276438942" duration="12336000" />
     </task>
     <servers />
   </component>
