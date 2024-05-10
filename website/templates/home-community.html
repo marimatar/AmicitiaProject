@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <style> 
+
       :root {
             --primary-color: #5de0e6;
             --secondary-color: #004aad;
@@ -35,6 +35,7 @@
             width: 30%;
             margin-top: 80px;
             margin-right: 20px; 
+
         }
 
         .create-event input[type="text"],
@@ -64,6 +65,7 @@
         }
 
         .events {
+
             margin-top: 40px; 
         }
 
@@ -132,7 +134,7 @@
         // Function to handle event creation or editing
         document.querySelector('.create-event').addEventListener('submit', function(event) {
             event.preventDefault();
-            
+
             // Get form values
             const eventId = this.querySelector('#eventId').value || Date.now(); // Unique ID for new event
             const eventName = this.querySelector('input[placeholder="Event Name"]').value;
@@ -140,7 +142,7 @@
             const date = this.querySelector('input[type="date"]').value;
             const time = this.querySelector('input[type="time"]').value;
             const description = this.querySelector('textarea').value;
-            
+
             // Create event object
             const eventObj = {
                 id: eventId,
@@ -177,7 +179,7 @@
         // Function to append event template to DOM
         function appendEvent(event) {
             const eventsContainer = document.querySelector('.events');
-            
+
             // Create event template
             const eventTemplate = `
                 <div class="event" data-id="${event.id}">
@@ -198,7 +200,7 @@
                     </div>
                 </div>
             `;
-            
+
             // Append event template to container
             eventsContainer.innerHTML += eventTemplate;
         }
