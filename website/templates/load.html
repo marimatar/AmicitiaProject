@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loading Animation</title>
+<style>
+    body {
+  background-color: white;
+}
+#preloader {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+#loader {
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    width: 250px; /* Increased size */
+    height: 250px; /* Increased size */
+    margin: -125px 0 0 -125px; /* Adjusted margin for larger size */
+    border-radius: 50%;
+    border: 4px solid transparent; /* Increased border width for visibility */
+    border-top-color: #bcc9ff;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+#loader:before {
+    content: "";
+    position: absolute;
+    top: 10px; /* Adjusted position */
+    left: 10px; /* Adjusted position */
+    right: 10px; /* Adjusted position */
+    bottom: 10px; /* Adjusted position */
+    border-radius: 50%;
+    border: 4px solid transparent; /* Increased border width for visibility */
+    border-top-color: #2ec0ff;
+    -webkit-animation: spin 3s linear infinite;
+    animation: spin 3s linear infinite;
+}
+#loader:after {
+    content: "";
+    position: absolute;
+    top: 30px; /* Adjusted position */
+    left: 30px; /* Adjusted position */
+    right: 30px; /* Adjusted position */
+    bottom: 30px; /* Adjusted position */
+    border-radius: 50%;
+    border: 4px solid transparent; /* Increased border width for visibility */
+    border-top-color: #0084ff;
+    -webkit-animation: spin 1.5s linear infinite;
+    animation: spin 1.5s linear infinite;
+}
+@-webkit-keyframes spin {
+    0%   {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@keyframes spin {
+    0%   {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+</style>
+</head>
+<body>
+    <div id="preloader">
+    <div id="loader"></div>
+  </div>
+
+  <button id="startAnimation">Start Animation</button>
+
+  <script>
+    const startAnimationButton = document.getElementById('startAnimation');
+
+    startAnimationButton.addEventListener('click', () => {
+      // Trigger the animation by showing the preloader
+      document.getElementById('preloader').style.display = 'block';
+
+      // Redirect after 3 seconds
+      setTimeout(() => {
+        window.location.href = '/match'; // Replace with the desired URL
+      }, 3000); // 3 seconds in milliseconds
+    });
+  </script>
+</body>
+</html>

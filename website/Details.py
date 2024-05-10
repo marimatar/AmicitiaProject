@@ -8,7 +8,7 @@ class Details(db.Model):
     gender = db.Column(db.String(20))
     age = db.Column(db.Integer)
     ethnicity = db.Column(db.String(50))
-    interests = db.Column(db.JSON)  # Storing interests as JSON
+    interests = db.Column(db.Text)  # Storing interests as JSON
     languages = db.Column(db.Text)
     bio = db.Column(db.Text)
     profile_picture_url = db.Column(db.String(255))

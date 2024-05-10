@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/edit.css') }}" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+
+<body>
+  <div class="main-content">
+    <!-- Top navbar -->
+<div class="topNav">
+        <div class="navContent">
+            <h2 class="brand">Amicitia</h2>
+            <navButton class="fa fa-home" onclick="window.location.href='home'"></navButton>
+
+        </div>
+    </div>
+    <div class="dropdown">
+        <navButton class="fa fa-cog"></navButton>
+        <div class="dropdown-content">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+    <!-- Header -->
+    <div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="min-height: 200px;); background-size: cover; background-position: center top;">
+      <!-- Mask -->
+      <span class="mask bg-gradient-default opacity-8"></span>
+      <!-- Header container -->
+    </div>
+    <!-- Page content -->
+    <div class="container-fluid mt--7">
+      <div class="row">
+        <div class="col-xl-4 order-xl-2 mb-5 mb-xl-0">
+          <div class="card card-profile shadow">
+            <div class="row justify-content-center">
+              <div class="col-lg-3 order-lg-2">
+                <div class="card-profile-image">
+                  <a href="#">
+                    <img src="https://cdn.iconscout.com/icon/free/png-256/free-user-1648810-1401302.png?f=webp" class="rounded-circle">
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
+            </div>
+            <div class="card-body pt-0 pt-md-4">
+              <div class="row">
+                <div class="col">
+                  <div class="card-profile-stats d-flex justify-content-center mt-md-5">
+
+                  </div>
+                </div>
+              </div>
+              <div class="text-center">
+                <h3>
+                    {{ username}}<span class="font-weight-light">, {{ age }}</span>
+                </h3>
+                <div>
+                </div>
+                <hr class="my-4">
+                <div>
+                  <i class="ni education_hat mr-2"></i>Interests:
+                </div>
+                <hr class="my-4">
+                  <div class="intrbutton-container">
+                   <button class="intrbutton">Fitness</button>
+                    <button class="intrbutton">Outdoors</button>
+                    <button class="intrbutton">Sports</button>
+                    <button class="intrbutton">Yoga/Meditation</button>
+                    <button class="intrbutton">Travel</button>
+                    <button class="intrbutton">Hiking</button>
+                    <button class="intrbutton">Camping</button>
+                    <button class="intrbutton">Foodie</button>
+                    <button class="intrbutton">Coffee Lover</button>
+                    <button class="intrbutton">Wine Enthusiast</button>
+                    <button class="intrbutton">Cooking</button>
+                    <button class="intrbutton">Music</button>
+                    <button class="intrbutton">Books</button>
+                    <button class="intrbutton">Art</button>
+                    <button class="intrbutton">Film/TV</button>
+                    <button class="intrbutton">Pets</button>
+                    <button class="intrbutton">Animals</button>
+                    <button class="intrbutton">Volunteering</button>
+                    <button class="intrbutton">Languages</button>
+                    <button class="intrbutton">Tech</button>
+                    <button class="intrbutton">Gaming</button>
+                    <button class="intrbutton">Anime</button>
+                    <button class="intrbutton">Fashion</button>
+                    <button class="intrbutton">Photography</button>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-8 order-xl-1">
+          <div class="card bg-secondary shadow">
+            <div class="card-header bg-white border-0">
+              <div class="row align-items-center">
+                <div class="col-8">
+                  <h3 class="mb-0">{{ username }}'s account</h3>
+                </div>
+              <div class="col-4 text-right">
+            <!-- You can place your content here, it will align to the right -->
+                  <h3 class="mb-0">{{ age }}</h3>
+              </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <form>
+                <h6 class="heading-small text-muted mb-4">User information</h6>
+                <div class="pl-lg-4">
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <div class="form-group focused">
+                         <label class="form-control-label" for="input-first-name">Gender</label>
+                        <select id="input-gender" class="form-control form-control-alternative">
+                            <option value="Female">Female</option>
+                            <option value="Male">Male</option>
+                            <option value="Non-binary">Non-binary</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-last-name">Pronouns</label>
+                            <select id="input-pronouns" class="form-control form-control-alternative">
+                                <option value="He/Him">He/Him</option>
+                                <option value="She/Her">She/Her</option>
+                                <option value="They/Them">They/Them</option>
+                                <option value="Other">Other</option>
+                                <option value="Prefer not to say">Prefer not to say</option>
+                            </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <div class="form-group focused">
+                        <label class="form-control-label" for="input-first-name">Ethnicity</label>
+                        <input type="text" id="input-first-name" class="form-control form-control-alternative" placeholder="First name" value="Lucky">
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="form-group focused">
+                        <label class="form-control-label" for="input-last-name">Languages</label>
+                        <input type="text" id="input-last-name" class="form-control form-control-alternative" placeholder="Last name" value="Jesse">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <hr class="my-4">
+                <!-- Address -->
+                <!-- Description -->
+                <h6 class="heading-small text-muted mb-4">User Bio</h6>
+                <div class="pl-lg-4">
+                  <div class="form-group focused">
+                    <label>Bio:</label>
+                    <textarea rows="4" class="form-control form-control-alternative" placeholder="A few words about you ...">A beautiful Dashboard for Bootstrap 4. It is Free and Open Source.</textarea>
+                  </div>
+                </div>
+              </form>
+                <div style="text-align: center;">
+                <a href="#!" class="btn btn-info">Save</a>
+                </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+  </footer>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    var buttons = document.querySelectorAll('.intrbutton');
+
+    buttons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            // Add 'clicked' class to the clicked button
+            this.classList.add('clicked');
+        });
+    });
+});
+</script>
+</body>
+</html>
