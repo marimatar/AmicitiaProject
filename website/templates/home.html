@@ -1,15 +1,7 @@
-<!doctype html>
-<html>
-      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}" />
-      <script type="text/javascript">
-        function redirectToHomeCommunity() {
-            window.location.href = "{{ url_for('views.homecommunity') }}";
-        }
-    </script>
-  <div class="header"></div>
+{% extends "base.html" %}
 
-  <body>
-    <div title = "nav bar" class = "topNav">
+{% block content %}
+
       <h2>Amicitia</h2>
     <!-- <div>
     </div> -->
@@ -36,5 +28,4 @@
     <div title="rightColumn" class="rightColumn"style=" position: fixed; top: 0px;right: 0%; background-color: blue">
       <h1>Chats</h1>
     </div>
-  </body>
-<html>
+{% endblock%}

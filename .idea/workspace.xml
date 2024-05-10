@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a56058a6-1cec-4758-84a0-cb8b6da48c47" name="Changes" comment="excluding .idea and .venv files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/static/css/navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/website/static/css/navbar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instance/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/instance/database.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/templates/home.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +64,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "backendloginupdates",
+    "git-widget-placeholder": "dorianupdate",
     "last_opened_file_path": "C:/Users/mmata/PycharmProjects/Amicitia",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -179,7 +179,7 @@
       <workItem from="1714619595724" duration="7026000" />
       <workItem from="1715052179609" duration="18029000" />
       <workItem from="1715075848726" duration="2840000" />
-      <workItem from="1715276438942" duration="12336000" />
+      <workItem from="1715276438942" duration="12657000" />
     </task>
     <servers />
   </component>
@@ -211,6 +211,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Amicitia$populate_db.coverage" NAME="populate_db Coverage Results" MODIFIED="1714624806369" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Amicitia$Amicitia.coverage" NAME="Amicitia Coverage Results" MODIFIED="1715297242511" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/Amicitia$Amicitia.coverage" NAME="Amicitia Coverage Results" MODIFIED="1715303840309" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>
