@@ -4,6 +4,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_user, login_required, logout_user, current_user
 from .models import User, ProfileInfo
 import datetime
+from .Details import Details
 
 
 auth = Blueprint('auth', __name__)
@@ -82,3 +83,24 @@ def sign_up():
         return redirect(url_for('views.profile'))
 
     return render_template("loginpage.html", user=current_user)
+
+@auth.route('/edit', methods=['GET', 'POST'])
+def edit():
+    if request.method == 'POST':
+        gender = request.form.get('gender')
+        pronouns = request.form.get('pronouns')
+        ethnicity = request.form.get('ethnicity')
+        languages = request.form.get('languages')  # Assuming input as comma-separated string
+        bio = request.form.get('bio')
+
+        current_user.gender = gender
+        current_user.pronouns = pronouns
+        current_user.ethnicity = ethnicity
+        current_user.languages = languages
+        current_user.bio = bio
+
+        db.session.commit()
+        return redirect(url_for('views.profileuser'))
+    return render_template('editprofile.html', username=current_user.username, age=current_user.age,
+                           gender=current_user.gender, pronouns=current_user.pronouns, ethnicity=current_user.ethnicity, languages=current_user.languages, bio=current_user.bio)
+

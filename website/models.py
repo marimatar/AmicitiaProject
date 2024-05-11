@@ -10,11 +10,17 @@ class User(db.Model, UserMixin):
     username = db.Column(db.String(150), nullable=False)
     password = db.Column(db.String(150), nullable=False)
     birthday = db.Column(db.Date, nullable=False)
+    gender = db.Column(db.String(20))
+    pronouns = db.Column(db.String(20))
+    ethnicity = db.Column(db.String(50))
+    languages = db.Column(db.String(255))  # Comma-separated languages
+    bio = db.Column(db.Text)
 
     @property
     def age(self):
         today = datetime.date.today()
         return today.year - self.birthday.year - ((today.month, today.day) < (self.birthday.month, self.birthday.day))
+
 
 
 # class Matcher(User):

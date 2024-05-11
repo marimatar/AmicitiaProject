@@ -1,8 +1,9 @@
-from flask import Blueprint, render_template, redirect, \
-    url_for  # views can be defined in multiple files using Blueprint
+from flask import Blueprint, render_template, request, flash, redirect, url_for, session, \
+    jsonify  # views can be defined in multiple files
 from . import db
-from flask_login import login_required, current_user
+from flask_login import login_user, login_required, logout_user, current_user
 from .models import User, ProfileInfo
+from .Details import Details
 
 views = Blueprint('views', __name__)  # blueprint setup
 
@@ -26,23 +27,33 @@ def home():  # put application's code here
 def homecommunity():
     return render_template('home-community.html')
 
-@views.route('/edit')
-def edit():
-    return render_template('editprofile.html', username=current_user.username, age=current_user.age)
 
 @views.route('/load')
 def load():
     return render_template('load.html')
 
+
 @views.route('/profile')
 def profile():
     return render_template('profile.html')
+
+@views.route('/match1')
+def match1():
+    return render_template('match1.html')
+
+@views.route('/profileuser')
+def profileuser():
+    return render_template('profileuser.html', username=current_user.username, age=current_user.age,
+                           gender=current_user.gender, ethnicity=current_user.ethnicity, languages=current_user.languages, bio=current_user.bio)
 
 
 @views.route('/chat')
 def chat():
     return render_template('chat.html')
 
+@views.route('/events')
+def events():
+    return render_template('events.html')
 
 @views.route('/match')
 def match():
