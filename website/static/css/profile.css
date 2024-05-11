@@ -6,6 +6,10 @@
     --shade1: #5dbec6;
 }
 
+* {
+    caret-color: transparent;
+}
+
 body {
     margin: 0;
     font-family: 'Anonymous Pro', sans-serif;

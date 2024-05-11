@@ -4,15 +4,9 @@ from sqlalchemy.orm import declared_attr
 
 class Details(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.Text, nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), unique=True)
     gender = db.Column(db.String(20))
-    age = db.Column(db.Integer)
+    pronouns = db.Column(db.String(20))
     ethnicity = db.Column(db.String(50))
-    interests = db.Column(db.Text)  # Storing interests as JSON
-    languages = db.Column(db.Text)
+    languages = db.Column(db.String(255))  # Comma-separated languages
     bio = db.Column(db.Text)
-    profile_picture_url = db.Column(db.String(255))
-
-    @declared_attr
-    def interests(cls):
-        return db.Column(db.JSON, default=list)  # Default to an empty list

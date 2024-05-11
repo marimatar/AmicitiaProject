@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="static/js/profile.js"></script>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/navbar.css') }}" />
+
+<head>
+    <title>Base</title>
+
+    <div class="topNav">
+        <div class="navContent">
+            <h2 class="brand">Amicitia</h2>
+            <h3></h3>
+            <navButton class="fa fa-home" onclick="window.location.href='home'"></navButton>
+
+        </div>
+    </div>
+    <div class="dropdown">
+        <navButton class="fa fa-cog"></navButton>
+        <div class="dropdown-content">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+
+</head>
+<body>
+
+
+<style>
+    .post{
+        width: 60%;
+        height: auto;
+        background: #fff;
+        border: 1px solid #dfdfdf;
+        margin-top: 60px;
+        margin-left: 20%;
+    }
+
+    .info{
+        width: 95%;
+        height: 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+    }
+
+    .info .username{
+        width: auto;
+        font-weight: bold;
+        color: #000;
+        font-size: 14px;
+        margin-left: 10px;
+    }
+
+    .info .options{
+        height: 10px;
+        cursor: pointer;
+    }
+
+    .info .user{
+        display: flex;
+        align-items: center;
+    }
+
+    .info .profile-pic{
+        height: 40px;
+        width: 40px;
+        padding: 0;
+        background: none;
+    }
+
+    .info .profile-pic img{
+        border: none;
+    }
+
+    .post-image{
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+    }
+
+    .post-content{
+        width: 98%;
+        padding: 20px;
+    }
+
+    .likes{
+        font-weight: bold;
+    }
+
+    .description{
+        margin: 10px 0;
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .description span{
+        font-weight: bold;
+        margin-right: 10px;
+    }
+
+    .post-time{
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 12px;
+    }
+
+    .comment-wrapper{
+        width: 100%;
+        height: 50px;
+        border-radius: 1px solid #dfdfdf;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .comment-wrapper .icon{
+        height: 30px;
+        margin: 3px;
+    }
+
+    .comment-box{
+        width: 80%;
+        height: 100%;
+        border: none;
+        outline: none;
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+
+    .comment-btn,
+    .action-btn{
+        width: 70px;
+        height: 100%;
+        background: none;
+        border: none;
+        outline: none;
+        text-transform: capitalize;
+        font-size: 16px;
+        color: rgb(0, 162, 255);
+        opacity: 0.5;
+    }
+
+    .reaction-wrapper{
+        width: 100%;
+        height: 50px;
+        display: flex;
+        margin-top: -20px;
+        align-items: center;
+    }
+
+    .reaction-wrapper .icon{
+        height: 25px;
+        margin: 0;
+        margin-right: 20px;
+    }
+
+    .reaction-wrapper .icon.save{
+        margin-left: auto;
+    }
+</style>
+<section class="main">
+    <div class="wrapper">
+        <div class="left-col">
+            // status wrappers
+
+            <div class="post">
+                <div class="info">
+                    <div class="user">
+                        <div class="profile-pic"><img style="width: 40px; border-radius: 50%"src="{{url_for('static',filename='images/cover 1.png')}}" alt=""></div>
+                        <p class="username">modern_web_channel</p>
+                    </div>
+                    <img src="{{url_for('static',filename='images/option.PNG')}}" class="options" alt="">
+                </div>
+                <img src="{{url_for('static',filename='images/cover 1.png')}}" class="post-image" alt="">
+                <div class="post-content">
+                    <div class="reaction-wrapper">
+                        <img src="{{url_for('static',filename='images/like.png')}}" class="icon" alt="">
+                        <img src="{{url_for('static',filename='images/comment.png')}}" class="icon" alt="">
+                        <img src="{{url_for('static',filename='images/send.png')}}" class="icon" alt="">
+                        <img src="{{url_for('static',filename='images/save.png')}}" class="save icon" alt="">
+                    </div>
+                    <p class="likes">1,012 likes</p>
+                    <p class="description"><span>username </span> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur tenetur veritatis placeat, molestiae impedit aut provident eum quo natus molestias?</p>
+                    <p class="post-time">2 minutes ago</p>
+                </div>
+                <div class="comment-wrapper">
+                    <img src="{{url_for('static',filename='images/smile.png')}}" class="icon" alt="">
+                    <input type="text" class="comment-box" placeholder="Add a comment">
+                    <button class="comment-btn">post</button>
+                </div>
+            </div>
+            <div class="post">
+                <div class="info">
+                    <div class="user">
+                        <div class="profile-pic"><img style="width: 40px; border-radius: 50%"src="{{url_for('static',filename='images/cover 2.png')}}" alt=""></div>
+                        <p class="username">modern_web_channel</p>
+                    </div>
+                    <img src="{{url_for('static',filename='images/option.png')}}" class="options" alt="">
+                </div>
+                <img src="{{url_for('static',filename='images/cover 2.png')}}" class="post-image" alt="">
+                <div class="post-content">
+                    <div class="reaction-wrapper">
+                        <img src="{{url_for('static',filename='images/like.png')}}" class="icon" alt="">
+                        <img src="{{url_for('static',filename='images/comment.png')}}" class="icon" alt="">
+                        <img src="{{url_for('static',filename='images/send.png')}}" class="icon" alt="">
+                        <img src="{{url_for('static',filename='images/save.png')}}" class="save icon" alt="">
+                    </div>
+                    <p class="likes">1,012 likes</p>
+                    <p class="description"><span>username </span> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur tenetur veritatis placeat, molestiae impedit aut provident eum quo natus molestias?</p>
+                    <p class="post-time">2 minutes ago</p>
+                </div>
+                <div class="comment-wrapper">
+                    <img src="{{url_for('static',filename='images/smile.png')}}" class="icon" alt="">
+                    <input type="text" class="comment-box" placeholder="Add a comment">
+                    <button class="comment-btn">post</button>
+                </div>
+            </div>
+            // +5 more post elements
+        </div>
+    </div>
+</section>
+</body>
+</html>
