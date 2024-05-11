@@ -48,7 +48,7 @@ body {
 }
 
 button {
-    background-color: var(--shade1);
+    background-color: #2d5481;
     font-family: 'Jost', sans-serif;
     color: #fff;
     border: none;
@@ -59,7 +59,7 @@ button {
 }
 
 button:hover {
-    background-color: var(--shade1);
+    background-color: #85abde;
 }
 
 /* Modal styles */

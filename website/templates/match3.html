@@ -11,9 +11,12 @@
         function redirectToProfilePage() {
             window.location.href = "{{ url_for('views.profileuser') }}";
         }
+         function redirectToLoad() {
+            window.location.href = "{{ url_for('views.load') }}";
+        }
 </script>
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/navbar.css') }}" />
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/match.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/match.css') }}?v=1.1" />
 
 <head>
     <title>match3</title>
@@ -22,11 +25,12 @@
             <div class="userSection">
                 <i class="fa fa-user-circle" onclick="redirectToProfilePage()"></i>
                 <span class="username">{{ username }}</span>
+                <button style="font-weight: bold;  letter-spacing: 2px;" onclick="redirectToLoad()">Match</button>
             </div>
             <h2 class="brand">Amicitia</h2>
                 <div class="navButtons">
                     <navButton class="fa fa-home" onclick="redirectToHomeCommunity()"></navButton>
-                    <navButton class="fa fa-power-off" onclick="logout()"></navButton>
+                    <navButton class="fa fa-power-off" onclick=window.location.href='{{ url_for('auth.logout') }}'></navButton>
                 </div>
         </div>
     </div>
@@ -35,22 +39,16 @@
     <div class="container">
       <div class="card">
         <img src="{{url_for('static',filename='1 de 3 Avatars Flat/Avatars Set Flat Style-15.png')}}" alt="Person" class="card__image">
-        <p class="card__name">Nicholas</p>
-        <div class="grid-container">
-
+        <p class="card__name">nicholas</p>
           <div class="grid-child-posts">
-            Gender:
+            22 | MALE
           </div>
-
-          <div class="grid-child-followers">
-            Age:
-          </div>
-
+        <div class="Bio">
+            <p class="Interests">Tech geek and video game aficionado</p>
         </div>
-
         <div class="Bio">
             <p>Interests</p>
-            <p class="Interests">Horses | Crystals | Astrology | Fashion | Yoga/Meditation | Cars | Sports | Fitness</p>
+            <p class="Interests">Tech | Gaming | Anime | Film/TV | Music | Travel | Outdoors | Sports</p>
         </div>
 
 
@@ -59,43 +57,31 @@
       </div>
       <div class="card">
         <img src="{{url_for('static',filename='1 de 3 Avatars Flat/Avatars Set Flat Style-23.png')}}" alt="Person" class="card__image">
-        <p class="card__name">Aladdin</p>
-        <div class="grid-container">
-
+        <p class="card__name">mo3taz</p>
           <div class="grid-child-posts">
-            Gender:
+            19 | MALE
           </div>
-
-          <div class="grid-child-followers">
-            Age:
-          </div>
-
+        <div class="Bio">
+            <p class="Interests">Foodie and amateur chef exploring culinary adventures</p>
         </div>
-
         <div class="Bio">
             <p>Interests</p>
-            <p class="Interests">Horses | Crystals | Astrology | Fashion | Yoga/Meditation | Cars | Sports | Fitness</p>
+            <p class="Interests">Foodie | Cooking | Wine Enthusiast | Coffee Lover | Travel | Outdoors | Hiking | Camping</p>
         </div>
 
       </div>
       <div class="card">
         <img src="{{url_for('static',filename='1 de 3 Avatars Flat/Avatars Set Flat Style-42.png')}}" alt="Person" class="card__image">
-        <p class="card__name">Colibri</p>
-        <div class="grid-container">
-
-          <div class="grid-child-posts">
-            Gender:
+        <p class="card__name">Cindi</p>
+        <div class="grid-child-posts">
+            21 | FEMALE
           </div>
-
-          <div class="grid-child-followers">
-            Age:
-          </div>
-
+        <div class="Bio">
+            <p class="Interests">Yoga instructor spreading mindfulness and positivity</p>
         </div>
-
         <div class="Bio">
             <p>Interests</p>
-            <p class="Interests">Horses | Crystals | Astrology | Fashion | Yoga/Meditation | Cars | Sports | Fitness</p>
+            <p class="Interests">Yoga/Meditation | Outdoors | Hiking | Camping | Travel | Fitness | Wine Enthusiast | Coffee Lover</p>
         </div>
       </div>
       <div class="button-container">
