@@ -60,48 +60,7 @@ html {
     --secondary-color: #004aad;
     --shade1: #5dbec6;
 }
-navButton {
-    background-color: var(--secondary-color);
-    font-family: 'Anonymous Pro', sans-serif;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-navButton:hover {
-    background-color: var(--shade1);
-}
-.topNav {
-    position: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 10%;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 999;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-    color: white;
-    overflow: hidden;
-}
 
-.brand {
-    font-family: 'Anonymous Pro', sans-serif;
-    font-size: 40px;
-}
-
-.navContent {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: var(--shade6);
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
 
     /* Style for the dropdown container */
     .dropdown {
@@ -143,20 +102,6 @@ navButton:hover {
         max-height: 200px
     }
 
-.fa-home {
-    font-size: larger;
-    cursor: pointer;
-    color:white;
-    font-size: 36px;
-}
-
-.fa-cog {
-    font-size: larger;
-    cursor: pointer;
-    color: white;
-    font-size: 36px;
-
-}
 
 figcaption,
 footer,

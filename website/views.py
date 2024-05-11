@@ -35,25 +35,35 @@ def load():
 
 @views.route('/profile')
 def profile():
-    return render_template('profile.html')
+    return render_template('profile.html', username = current_user.username)
 
 @views.route('/match1')
 def match1():
-    return render_template('match1.html')
+    return render_template('match1.html', username = current_user.username)
+
+@views.route('/match2')
+def match2():
+    return render_template('match2.html', username = current_user.username)
+
+
+@views.route('/match3')
+def match3():
+    return render_template('match3.html', username = current_user.username)
 
 @views.route('/profileuser')
 def profileuser():
     return render_template('profileuser.html', username=current_user.username, age=current_user.age,
-                           gender=current_user.gender, ethnicity=current_user.ethnicity, languages=current_user.languages, bio=current_user.bio)
+                           gender=current_user.gender, ethnicity=current_user.ethnicity,
+                           languages=current_user.languages, bio=current_user.bio)
 
 
 @views.route('/chat')
 def chat():
-    return render_template('chat.html')
+    return render_template('chat.html', username=current_user.username)
 
 @views.route('/events')
 def events():
-    return render_template('events.html')
+    return render_template('events.html', username = current_user.username)
 
 @views.route('/match')
 def match():

@@ -29,7 +29,7 @@
 }
 .navContent {
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
     align-items: center;
     color: white;
 }
@@ -38,7 +38,7 @@
     position: absolute;
     right: 20px;
     font-size:larger;
-    top: 50%; 
+    top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
     color: white;

@@ -13,15 +13,15 @@
     <!--Updated Nav bar-->
     <div class="topNav">
         <div class="navContent">
-            <h2 class="brand">Amicitia</h2>
-            <div class="dropdown">
-                <i class="fa fa-cog" onclick="toggleDropdown(event)"></i>
-                <div class="dropdown-content">
-                    <a onclick="redirectToProfilePage()">Profile Settings</a>
-                    <a onclick="logout()">Logout</a> <!--redirected to create account page-->
-                </div>
+            <div class="userSection">
+                <i class="fa fa-user-circle" onclick="redirectToProfilePage()"></i>
+                <span class="username">{{ username }}</span>
             </div>
-            <i class="fa fa-home" onclick="redirectToHomeCommunity()"></i>
+            <h2 class="brand">Amicitia</h2>
+                <div class="navButtons">
+                    <navButton class="fa fa-home" onclick="redirectToHomeCommunity()"></navButton>
+                    <navButton class="fa fa-power-off" onclick="logout()"></navButton>
+                </div>
         </div>
     </div>
 
