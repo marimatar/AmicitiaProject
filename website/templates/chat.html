@@ -196,9 +196,14 @@
     background-color: #1c9bef;
   }
   
-  .gray-bg {
-    background-color: #3d5365;
+  .orange-bg {
+    background-color: rgb(224, 146, 0);
   }
+
+  .purple-bg {
+  background-color: rgb(177, 0, 177);
+}
+
   
   .chat-input-form {
     display: flex;
@@ -261,11 +266,11 @@
           <div class="message-sender">Apple joined groupchat</div>
         </div>
        
-        <div class="message gray-bg">
+        <div class="message orange-bg">
           <div class="message-sender">Orange joined groupchat</div>
         </div>
 
-        <div class="message gray-bg">
+        <div class="message purple-bg">
           <div class="message-sender">Lemon joined groupchat</div>
         </div>
 
@@ -292,7 +297,7 @@ const clearChatBtn = document.querySelector('.clear-chat-button')
 const messages = JSON.parse(localStorage.getItem('messages')) || []
 
 const createChatMessageElement = (message) => `
-  <div class="message ${message.sender === 'Apple' ? 'blue-bg' : 'gray-bg'}">
+  <div class="message ${message.sender === 'Apple' ? 'blue-bg' : message.sender === 'Orange' ? 'orange-bg' : 'purple-bg'}">
     <div class="message-sender">${message.sender}</div>
     <div class="message-text">${message.text}</div>
     <div class="message-timestamp">${message.timestamp}</div>
