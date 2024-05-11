@@ -1,27 +1,32 @@
 <!DOCTYPE html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Profile Page</title>
-    <script src="static/js/profile.js"></script>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/profile.css') }}" />
+	<title>Profile Page</title>
+    <script type="text/javascript">
+        function redirectToHome() {
+            window.location.href = "{{ url_for('views.home') }}";
+        }
+        function redirectToProfilePage() {
+            window.location.href = "{{ url_for('views.profileuser') }}";
+        }
+    </script>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/navbar.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/profile.css') }}" />
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <!--Updated Nav bar-->
     <div class="topNav">
         <div class="navContent">
-            <h2 class="brand">Amicitia</h2>
-            <div class="dropdown">
-                <i class="fa fa-cog" onclick="toggleDropdown(event)"></i>
-                <div class="dropdown-content">
-                    <a onclick="redirectToProfilePage()">Profile Settings</a>
-                    <a onclick="logout()">Logout</a> <!--redirected to create account page-->
-                </div>
+            <div class="userSection">
+                <i class="fa fa-user-circle" onclick="redirectToProfilePage()"></i>
+                <span class="username">{{ username }}</span>
             </div>
-            <i class="fa fa-home" onclick="redirectToHomeCommunity()"></i>
+            <h2 class="brand">Amicitia</h2>
+                <div class="navButtons">
+                    <navButton class="fa fa-home" onclick="redirectToHomeCommunity()"></navButton>
+                    <navButton class="fa fa-power-off" onclick="logout()"></navButton>
+                </div>
         </div>
     </div>
 

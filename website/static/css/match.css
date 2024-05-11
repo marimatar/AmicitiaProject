@@ -18,7 +18,7 @@
 
 .card {
   background-color: #222831;
-  height: 37rem;
+  height: 30rem;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -181,48 +181,6 @@
     --secondary-color: #004aad;
     --shade1: #5dbec6;
 }
-navButton {
-    background-color: var(--secondary-color);
-    font-family: 'Jost', sans-serif;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-navButton:hover {
-    background-color: var(--shade1);
-}
-.topNav {
-    position: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 10%;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 999;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-    color: white;
-    overflow: hidden;
-}
-
-.brand {
-    font-family: 'Great Vibes', cursive;
-    font-size: 40px;
-}
-
-.navContent {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: var(--shade6);
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
 
     /* Style for the dropdown container */
     .dropdown {
@@ -264,17 +222,32 @@ navButton:hover {
         max-height: 200px
     }
 
-.fa-home {
-    font-size: larger;
-    cursor: pointer;
-    color:white;
-    font-size: 36px;
+
+.Bio {
+  margin: 10px 3px;
 }
 
-.fa-cog {
-    font-size: larger;
-    cursor: pointer;
-    color: white;
-    font-size: 36px;
+.Bio {
 
+  color: #333;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+.button-container {
+  position: absolute;
+  display: flex; /* Use flexbox for layout */
+  left: 42%;
+  top: 650px;
+}
+
+.circular-button {
+  width: 70px; /* Set button width */
+  height: 70px; /* Set button height */
+  border-radius: 50%; /* Make button circular */
+  color: #fff; /* Text color */
+  background-color: rgb(16, 107, 244);
+  margin: 20px; /* Add margin between buttons */
+  font-size: large;
 }

@@ -3,27 +3,30 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script>
+     function redirectToHome() {
+            window.location.href = "{{ url_for('views.home') }}";
+        }
+        function redirectToProfilePage() {
+            window.location.href = "{{ url_for('views.profileuser') }}";
+        }
+</script>
 <script src="static/js/profile.js"></script>
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/navbar.css') }}" />
 
 <head>
     <title>Base</title>
-
-    <div class="topNav">
+<div class="topNav">
         <div class="navContent">
+            <div class="userSection">
+                <i class="fa fa-user-circle" onclick="redirectToProfilePage()"></i>
+                <span class="username">{{ username }}</span>
+            </div>
             <h2 class="brand">Amicitia</h2>
-            <h3></h3>
-            <navButton class="fa fa-home" onclick="window.location.href='home'"></navButton>
-
-        </div>
-    </div>
-    <div class="dropdown">
-        <navButton class="fa fa-cog"></navButton>
-        <div class="dropdown-content">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#contact">Contact</a>
+                <div class="navButtons">
+                    <navButton class="fa fa-home" onclick="redirectToHomeCommunity()"></navButton>
+                    <navButton class="fa fa-power-off" onclick="logout()"></navButton>
+                </div>
         </div>
     </div>
 

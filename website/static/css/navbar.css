@@ -9,9 +9,11 @@
     --secondary-color: #004aad;
     --shade1: #5dbec6;
 }
+
+
 navButton {
     background-color: var(--secondary-color);
-    font-family: 'Jost', sans-serif;
+	font-family: 'Anonymous Pro', monospace;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -38,9 +40,9 @@ navButton:hover {
 }
 
 .brand {
-    font-family: 'Great Vibes', cursive;
-    font-size: 40px;
-}
+    padding-left: 10px;
+    font-family: 'Anonymous Pro', monospace;
+    font-size: 30px;}
 
 .navContent {
     display: flex;
@@ -93,16 +95,30 @@ navButton:hover {
     }
 
 .fa-home {
-    font-size: larger;
+    font-size: medium;
     cursor: pointer;
     color:white;
-    font-size: 36px;
 }
 
-.fa-cog {
-    font-size: larger;
+.fa-power-off {
+    font-size: medium;
     cursor: pointer;
     color: white;
-    font-size: 36px;
 
+}
+
+.username {
+    font-family: 'Anonymous Pro', monospace;
+    font-weight: bolder;
+    font-size: large;
+    font-stretch: semi-expanded;
+}
+
+.fa-user-circle {
+    font-size: 15px; /* Adjust this value to increase the size */
+    cursor: pointer;
+    color: white;
+    border-radius: 50%; /* Makes the image round */
+    border: 2px solid #fff; /* Adds a white border */
+    opacity: 0.9; /* Slightly transparent */
 }
