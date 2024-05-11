@@ -3,8 +3,6 @@
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/navbar.css') }}" />
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/edit.css') }}" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -14,6 +12,9 @@
         }
         function redirectToProfilePage() {
             window.location.href = "{{ url_for('views.profileuser') }}";
+        }
+        function redirectToLoad() {
+            window.location.href = "{{ url_for('views.load') }}";
         }
     </script>
 </head>
@@ -29,11 +30,12 @@
             <div class="userSection">
                 <i class="fa fa-user-circle" onclick="redirectToProfilePage()"></i>
                 <span class="username">{{ username }}</span>
+                <button class="button-match" style="font-weight: bold;  letter-spacing: 2px;" onclick="redirectToLoad()">Match</button>
             </div>
             <h2 class="brand">Amicitia</h2>
                 <div class="navButtons">
                     <navButton class="fa fa-home" onclick="redirectToHomeCommunity()"></navButton>
-                    <navButton class="fa fa-power-off" onclick="logout()"></navButton>
+                    <navButton class="fa fa-power-off" onclick=window.location.href='{{ url_for('auth.logout') }}'></navButton>
                 </div>
         </div>
     </div>
@@ -52,7 +54,7 @@
               <div class="col-lg-3 order-lg-2">
                 <div class="card-profile-image">
                   <a href="#">
-                    <img src="https://cdn.iconscout.com/icon/free/png-256/free-user-1648810-1401302.png?f=webp" class="rounded-circle">
+                    <img src="{{url_for('static',filename='images/usericon.png')}}" class="rounded-circle">
                   </a>
                 </div>
               </div>
@@ -189,8 +191,6 @@
       </div>
     </div>
   </div>
-  <footer class="footer">
-  </footer>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
     var buttons = document.querySelectorAll('.intrbutton');

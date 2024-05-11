@@ -5,7 +5,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Profile Page</title>
-    <script src="static/js/profile.js"></script>
+    <script src="{{ url_for('static', filename='css/profile.js') }}">
+    </script>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/profile.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/navbar.css') }}" />
 </head>
@@ -16,11 +17,13 @@
             <div class="userSection">
                 <i class="fa fa-user-circle" onclick="redirectToProfilePage()"></i>
                 <span class="username">{{ username }}</span>
+                <button style="font-weight: bold;  letter-spacing: 2px;" onclick="redirectToLoad()">Match</button>
             </div>
+
             <h2 class="brand">Amicitia</h2>
                 <div class="navButtons">
                     <navButton class="fa fa-home" onclick="redirectToHomeCommunity()"></navButton>
-                    <navButton class="fa fa-power-off" onclick="logout()"></navButton>
+                    <navButton class="fa fa-power-off" onclick=window.location.href='{{ url_for('auth.logout') }}'></navButton>
                 </div>
         </div>
     </div>
@@ -29,10 +32,10 @@
     <div class="profile-container">
         <div class="profile-info">
             <div class="profile-picture">
-                <img src="https://cdn.iconscout.com/icon/free/png-256/free-user-1648810-1401302.png?f=webp" alt="Profile Picture">
+                <img src="{{url_for('static',filename='images/usericon.png')}}" alt="">
             </div>
-            <h1 class="Name">Name</h1>
-            <h2 class="Username">Username</h2>
+            <h1 class="Name">{{ username }}</h1>
+            <h2 class="Username">{{ age }}</h2>
             <p class="Bio">Something about me...</p>
             <button id="editProfileBtn">Edit Profile</button>
             <button id="deleteAccountBtn">Delete Account</button>
@@ -47,5 +50,10 @@
             <button id="confirmDeleteBtn">Yes, Delete</button>
         </div>
     </div>
+<script>
+      function redirectToLoad() {
+            window.location.href = "{{ url_for('views.load') }}";
+        }
+</script>
 </body>
 </html>

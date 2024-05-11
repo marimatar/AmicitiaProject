@@ -35,7 +35,7 @@ def load():
 
 @views.route('/profile')
 def profile():
-    return render_template('profile.html', username = current_user.username)
+    return render_template('profile.html', username = current_user.username, age=current_user.age)
 
 @views.route('/match1')
 def match1():

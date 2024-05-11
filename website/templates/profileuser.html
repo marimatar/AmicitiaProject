@@ -8,6 +8,9 @@
         function redirectToProfilePage() {
             window.location.href = "{{ url_for('views.profileuser') }}";
         }
+        function redirectToLoad() {
+            window.location.href = "{{ url_for('views.load') }}";
+        }
     </script>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/navbar.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/profile.css') }}" />
@@ -21,11 +24,12 @@
             <div class="userSection">
                 <i class="fa fa-user-circle" onclick="redirectToProfilePage()"></i>
                 <span class="username">{{ username }}</span>
+                <button style="font-weight: bold;  letter-spacing: 2px;" onclick="redirectToLoad()">Match</button>
             </div>
             <h2 class="brand">Amicitia</h2>
                 <div class="navButtons">
                     <navButton class="fa fa-home" onclick="redirectToHomeCommunity()"></navButton>
-                    <navButton class="fa fa-power-off" onclick="logout()"></navButton>
+                    <navButton class="fa fa-power-off" onclick=window.location.href='{{ url_for('auth.logout') }}'></navButton>
                 </div>
         </div>
     </div>
@@ -34,7 +38,7 @@
     <div class="profile-container">
         <div class="profile-info">
             <div class="profile-picture">
-                <img src="https://cdn.iconscout.com/icon/free/png-256/free-user-1648810-1401302.png?f=webp" alt="Profile Picture">
+                <img src="{{url_for('static',filename='images/usericon.png')}}" alt="Profile Picture">
             </div>
             <h1 class="Name">{{ username }}</h1>
             <h2 class="Username">{{ age }}  |  {{ gender }}</h2>

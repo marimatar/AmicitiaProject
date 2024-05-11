@@ -6,7 +6,7 @@
 <title>Loading Animation</title>
 <style>
     body {
-  background-color: white;
+  background-color: #85abde;
 }
 #preloader {
     display: none; /* Initially hidden */
@@ -82,25 +82,18 @@
 }
 </style>
 </head>
-<body>
+<body onload="startAnimation();">
     <div id="preloader">
-    <div id="loader"></div>
-  </div>
-
-  <button id="startAnimation">Start Animation</button>
+        <div id="loader"></div>
+    </div>
 
   <script>
-    const startAnimationButton = document.getElementById('startAnimation');
-
-    startAnimationButton.addEventListener('click', () => {
-      // Trigger the animation by showing the preloader
-      document.getElementById('preloader').style.display = 'block';
-
-      // Redirect after 3 seconds
-      setTimeout(() => {
-        window.location.href = '/match'; // Replace with the desired URL
-      }, 3000); // 3 seconds in milliseconds
-    });
-  </script>
+        function startAnimation() {
+            document.getElementById('preloader').style.display = 'block';
+            setTimeout(() => {
+                window.location.href = '{{ url_for('views.match3') }}'; // Change this to the desired redirection URL
+            }, 3000); // Duration of the animation before redirecting
+        }
+    </script>
 </body>
 </html>

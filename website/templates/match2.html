@@ -21,11 +21,12 @@
             <div class="userSection">
                 <i class="fa fa-user-circle" onclick="redirectToProfilePage()"></i>
                 <span class="username">{{ username }}</span>
+                <button style="font-weight: bold;  letter-spacing: 2px;" onclick="redirectToLoad()">Match</button>
             </div>
             <h2 class="brand">Amicitia</h2>
                 <div class="navButtons">
                     <navButton class="fa fa-home" onclick="redirectToHomeCommunity()"></navButton>
-                    <navButton class="fa fa-power-off" onclick="logout()"></navButton>
+                    <navButton class="fa fa-power-off" onclick=window.location.href='{{ url_for('auth.logout') }}'></navButton>
                 </div>
         </div>
     </div>

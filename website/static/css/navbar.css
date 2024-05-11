@@ -12,7 +12,6 @@
 
 
 navButton {
-    background-color: var(--secondary-color);
 	font-family: 'Anonymous Pro', monospace;
     color: #fff;
     border: none;
@@ -22,7 +21,7 @@ navButton {
     transition: background-color 0.3s ease;
 }
 navButton:hover {
-    background-color: var(--shade1);
+    background-color: #85ABDEFF;
 }
 .topNav {
     position: fixed;
@@ -34,7 +33,7 @@ navButton:hover {
     left: 0;
     width: 100%;
     z-index: 999;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    background: linear-gradient(90deg, #729fda, #3f6996, #729fda);
     color: white;
     overflow: hidden;
 }
@@ -42,7 +41,10 @@ navButton:hover {
 .brand {
     padding-left: 10px;
     font-family: 'Anonymous Pro', monospace;
-    font-size: 30px;}
+    font-size: 30px;
+    letter-spacing: 2px;
+
+}
 
 .navContent {
     display: flex;
@@ -122,3 +124,4 @@ navButton:hover {
     border: 2px solid #fff; /* Adds a white border */
     opacity: 0.9; /* Slightly transparent */
 }
+

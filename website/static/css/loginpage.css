@@ -25,7 +25,7 @@
     left:0;
     width: 100%;
     z-index: 999;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    background: linear-gradient(90deg, #729fda, #2d5481, #729fda);
 }
 .navContent {
     display: flex;
@@ -51,7 +51,7 @@ body{
 	align-items: center;
 	min-height: 100vh;
 	font-family: 'Anonymous Pro', monospace;
-	background: linear-gradient(to bottom, var(--shade5), var(--shade2));
+	background: #afc5e3;
 }
 .main{
 	width: 350px;

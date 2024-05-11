@@ -1,24 +1,39 @@
 @import url("https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@400;500&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Anonymous+Pro");
+@import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+
 
 * {
     caret-color: transparent;
+
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+      background-color: #afc5e3;
+
 }
 
 .container {
+
   display: grid;
-  grid-template-columns: 300px 300px 300px;
+  grid-template-columns: 350px 350px 350px;
   grid-gap: 50px;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #f5f5f5;
+  background-color: #afc5e3;
   font-family: 'Baloo Paaji 2', cursive;
+    margin: 0;
+  max-width: 1650px;
 }
 
+
 .card {
-  background-color: #222831;
-  height: 30rem;
+  background-color: #324869;
+  height: 35rem;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -26,19 +41,19 @@
   box-shadow: rgba(0, 0, 0, 0.7);
   color: white;
 }
-
 .card__name {
-  margin-top: 15px;
-  font-size: 1.5em;
+  font-family: 'Anonymous Pro', monospace;
+  margin-top: 30px;
+  font-size: 1.8em;
 }
 
 .card__image {
   height: 160px;
   width: 160px;
   border-radius: 50%;
-  border: 5px solid #272133;
+  border: #5dbec6;
   margin-top: 20px;
-  box-shadow: 0 10px 50px rgba(235, 25, 110, 1);
+  box-shadow: 0 10px 30px rgb(133, 171, 222);
 }
 
 
@@ -79,7 +94,7 @@
 
 .draw-border:hover::before,
 .draw-border:hover::after {
-  border-color: #eb196e;
+  border-color: #ffffff;
   -webkit-transition: border-color 0s, width 0.25s, height 0.25s;
   transition: border-color 0s, width 0.25s, height 0.25s;
   width: 100%;
@@ -147,7 +162,7 @@
   height: 45px;
   border-radius: 100%;
   display: block;
-  background: linear-gradient(45deg, #ff003c, #c648c8);
+  background: linear-gradient(45deg, #2d5481, #bdd5f6);
   transition: all 265ms ease-out;
 }
 
@@ -167,14 +182,13 @@
   transition: all 265ms ease-in;
 }
 
-.grid-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 20px;
-  font-size: 1.2em;
+.grid-child-posts {
+  font-family: 'Anonymous Pro', monospace;
+  margin-top:0;
+  margin-bottom:10px;
+  font-size: 1.1em;
 }
 
-@import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
 
 :root {
     --primary-color: #5de0e6;
@@ -224,16 +238,18 @@
 
 
 .Bio {
-  margin: 10px 3px;
+  margin: 5px 3px;
 }
 
 .Bio {
-
+  text-align: center;
   color: #333;
   background-color: #fff;
-  padding: 10px;
+  padding: 5px;
   border-radius: 5px;
   border: 1px solid black;
+  width: 320px;
+    font-size: small;
 }
 .button-container {
   position: absolute;
@@ -251,3 +267,20 @@
   margin: 20px; /* Add margin between buttons */
   font-size: large;
 }
+
+button {
+    background-color: #2d5481;
+    font-family: 'Jost', sans-serif;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #85abde;
+}
+
+
