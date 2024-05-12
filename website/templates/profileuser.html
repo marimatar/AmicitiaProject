@@ -3,7 +3,7 @@
 	<title>Profile Page</title>
     <script type="text/javascript">
         function redirectToHome() {
-            window.location.href = "{{ url_for('views.home') }}";
+            window.location.href = "{{ url_for('views.events') }}";
         }
         function redirectToProfilePage() {
             window.location.href = "{{ url_for('views.profileuser') }}";
@@ -25,10 +25,17 @@
                 <i class="fa fa-user-circle" onclick="redirectToProfilePage()"></i>
                 <span class="username">{{ username }}</span>
                 <button style="font-weight: bold;  letter-spacing: 2px;" onclick="redirectToLoad()">Match</button>
+                <div class="dropdown">
+                    <button>Chats</button>
+                    <div class="dropdown-content">
+                      <button style="font-weight: bold;width:100%; border-radius: 0px;  letter-spacing: 2px;" onclick=" window.location.href ='{{ url_for('views.chat1') }}'">Chat 1</button>
+                        <button style="font-weight: bold;width:100%; border-radius: 0px;  letter-spacing: 2px;" onclick=" window.location.href ='{{ url_for('views.chat') }}'">Chat 2</button>
+                        </div>
+                  </div>
             </div>
             <h2 class="brand">Amicitia</h2>
                 <div class="navButtons">
-                    <navButton class="fa fa-home" onclick="redirectToHomeCommunity()"></navButton>
+                    <navButton class="fa fa-home" onclick="redirectToHome()"></navButton>
                     <navButton class="fa fa-power-off" onclick=window.location.href='{{ url_for('auth.logout') }}'></navButton>
                 </div>
         </div>
@@ -47,7 +54,7 @@
                 <p>Interests</p>
                 <p class="Interests">Horses | Crystals | Astrology | Fashion | Yoga/Meditation | Cars | Sports | Fitness</p>
             </div>
-            <button id="editProfileBtn">Edit Profile</button>
+            <button id="editProfileBtn"onclick=window.location.href='{{ url_for('auth.edit') }}'>Edit Profile</button>
             <button id="deleteAccountBtn">Delete Account</button>
         </div>
     </div>

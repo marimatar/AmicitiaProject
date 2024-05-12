@@ -32,7 +32,13 @@ def homecommunity():
 def load():
     return render_template('load.html')
 
+@views.route('/load1')
+def load1():
+    return render_template('load1.html')
 
+@views.route('/load2')
+def load2():
+    return render_template('load2.html')
 @views.route('/profile')
 def profile():
     return render_template('profile.html', username = current_user.username, age=current_user.age)
@@ -60,6 +66,10 @@ def profileuser():
 @views.route('/chat')
 def chat():
     return render_template('chat.html', username=current_user.username)
+
+@views.route('/chat1')
+def chat1():
+    return render_template('chat1.html', username=current_user.username)
 
 @views.route('/events')
 def events():

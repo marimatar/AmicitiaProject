@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head onload="clearChatBtn()">
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/navbar.css') }}" />
@@ -9,7 +9,7 @@
     <title>Chatroom</title>
     <script type="text/javascript">
         function redirectToHome() {
-            window.location.href = "{{ url_for('views.home') }}";
+            window.location.href = "{{ url_for('views.events') }}";
         }
         function redirectToProfilePage() {
             window.location.href = "{{ url_for('views.profileuser') }}";
@@ -214,7 +214,6 @@
     </style>
   </head>
   <body>
-
      <!--Updated Nav bar-->
      <div class="topNav">
         <div class="navContent">
@@ -225,33 +224,8 @@
                 <div class="dropdown">
                     <button class="button-match">Chats</button>
                     <div class="dropdown-content">
-                      <div class="button-match" style="
-                      background-color: #2d5481;
-                      font-family: 'Jost', sans-serif;
-                      color: #fff;
-                      border: none;
-                      padding: 10px 20px;
-                      cursor: pointer;
-                      transition: background-color 0.3s ease;
-                      font-weight: bold;
-                      width:100%;
-                      border-radius: 0px;
-                      letter-spacing: 2px;
-                        " onclick=" window.location.href ='{{ url_for('views.chat') }}'">Chat 1</div>
-                        <div class="button-match" style="
-                              background-color: #2d5481;
-                              font-family: 'Jost', sans-serif;
-                              color: #fff;
-                              border: none;
-                              padding: 10px 20px;
-                              cursor: pointer;
-                              transition: background-color 0.3s ease;
-                              font-weight: bold;
-                              width:100%;
-                              border-radius: 0px;
-                              letter-spacing: 2px;
-
-                        " onclick=" window.location.href ='{{ url_for('views.chat1') }}'">Chat 2</div>
+                      <button class="button-match" style="font-weight: bold;width:100%; border-radius: 0px;  letter-spacing: 2px;" onclick=" window.location.href ='{{ url_for('views.chat') }}'">Chat 1</button>
+                        <button class="button-match" style="font-weight: bold;width:100%; border-radius: 0px;  letter-spacing: 2px;" onclick=" window.location.href ='{{ url_for('views.chat1') }}'">Chat 2</button>
                         </div>
                   </div>
             </div>
@@ -266,9 +240,9 @@
     <!-- Person selector: this contains buttons for user to select whether to chat as -->
     <div class="person-selector">
       <button class="button person-selector-button active-person" id="user-selector">{{ username }}</button>
-      <button class="button person-selector-button" id="nicholas-selector">nicholas</button>
-      <button class="button person-selector-button" id="mo3taz-selector">mo3taz</button>
-      <button class="button person-selector-button" id="Cindi-selector">Cindi</button>
+      <button class="button person-selector-button" id="mmaru-selector">mmaru</button>
+      <button class="button person-selector-button" id="matchateo-selector">matchateo</button>
+      <button class="button person-selector-button" id="jmee-selector">jmee</button>
     </div>
     <div class="chat-container">
       <h2 class="chat-header">{{ username }} chatting...</h2>
@@ -280,15 +254,15 @@
         </div>
 
         <div class="message blue-bg">
-          <div class="message-sender">nicholas joined groupchat</div>
+          <div class="message-sender">mmaru joined groupchat</div>
         </div>
        
         <div class="message orange-bg">
-          <div class="message-sender">mo3taz joined groupchat</div>
+          <div class="message-sender">matchateo joined groupchat</div>
         </div>
 
         <div class="message purple-bg">
-          <div class="message-sender">Cindi joined groupchat</div>
+          <div class="message-sender">jmee joined groupchat</div>
         </div>
 
       </div>
@@ -303,19 +277,22 @@
     <script>
 
 const userSelectorBtn = document.querySelector('#user-selector')
-const nicholasSelectorBtn = document.querySelector('#nicholas-selector')
-const mo3tazSelectorBtn = document.querySelector('#mo3taz-selector')
-const CindiSelectorBtn = document.querySelector('#Cindi-selector')
+const mmaruSelectorBtn = document.querySelector('#mmaru-selector')
+const matchateoSelectorBtn = document.querySelector('#matchateo-selector')
+const jmeeSelectorBtn = document.querySelector('#jmee-selector')
 const chatHeader = document.querySelector('.chat-header')
 const chatMessages = document.querySelector('.chat-messages')
 const chatInputForm = document.querySelector('.chat-input-form')
 const chatInput = document.querySelector('.chat-input')
 const clearChatBtn = document.querySelector('.clear-chat-button')
 
-const messages = JSON.parse(localStorage.getItem('messages')) || []
+const chatRoomId = 'chatRoom1'; // This should be dynamically set or retrieved from the URL or page data
+const localStorageKey = `messages_${chatRoomId}`;
+
+const messages = JSON.parse(localStorage.getItem(localStorageKey)) || [];
 
 const createChatMessageElement = (message) => `
-  <div class="message ${message.sender === '{{username}}' ? 'red-bg' : message.sender === 'nicholas' ? 'blue-bg' : message.sender === 'mo3taz' ? 'orange-bg' : 'purple-bg'}">
+  <div class="message ${message.sender === '{{username}}' ? 'red-bg' : message.sender === 'mmaru' ? 'blue-bg' : message.sender === 'matchateo' ? 'orange-bg' : 'purple-bg'}">
     <div class="message-sender">${message.sender}</div>
     <div class="message-text">${message.text}</div>
     <div class="message-timestamp">${message.timestamp}</div>
@@ -337,27 +314,27 @@ const updateMessageSender = (name) => {
 
   if (name === '{{username}}') {
     userSelectorBtn.classList.add('active-person')
-    nicholasSelectorBtn.classList.remove('active-person')
-    mo3tazSelectorBtn.classList.remove('active-person')
-    CindiSelectorBtn.classList.remove('active-person')
+    mmaruSelectorBtn.classList.remove('active-person')
+    matchateoSelectorBtn.classList.remove('active-person')
+    jmeeSelectorBtn.classList.remove('active-person')
   }
-  if (name === 'nicholas') {
+  if (name === 'mmaru') {
     userSelectorBtn.classList.remove('active-person')
-    nicholasSelectorBtn.classList.add('active-person')
-    mo3tazSelectorBtn.classList.remove('active-person')
-    CindiSelectorBtn.classList.remove('active-person')
+    mmaruSelectorBtn.classList.add('active-person')
+    matchateoSelectorBtn.classList.remove('active-person')
+    jmeeSelectorBtn.classList.remove('active-person')
   }
-  if (name === 'mo3taz') {
+  if (name === 'matchateo') {
     userSelectorBtn.classList.remove('active-person')
-    nicholasSelectorBtn.classList.remove('active-person')
-    mo3tazSelectorBtn.classList.add('active-person')
-    CindiSelectorBtn.classList.remove('active-person')
+    mmaruSelectorBtn.classList.remove('active-person')
+    matchateoSelectorBtn.classList.add('active-person')
+    jmeeSelectorBtn.classList.remove('active-person')
   }
-  if (name === 'Cindi') {
+  if (name === 'jmee') {
     userSelectorBtn.classList.remove('active-person')
-    nicholasSelectorBtn.classList.remove('active-person')
-    mo3tazSelectorBtn.classList.remove('active-person')
-    CindiSelectorBtn.classList.add('active-person')
+    mmaruSelectorBtn.classList.remove('active-person')
+    matchateoSelectorBtn.classList.remove('active-person')
+    jmeeSelectorBtn.classList.add('active-person')
   }
   
 
@@ -366,9 +343,9 @@ const updateMessageSender = (name) => {
 }
 
 userSelectorBtn.onclick = () => updateMessageSender('{{username}}')
-nicholasSelectorBtn.onclick = () => updateMessageSender('nicholas')
-mo3tazSelectorBtn.onclick = () => updateMessageSender('mo3taz')
-CindiSelectorBtn.onclick = () => updateMessageSender('Cindi')
+mmaruSelectorBtn.onclick = () => updateMessageSender('mmaru')
+matchateoSelectorBtn.onclick = () => updateMessageSender('matchateo')
+jmeeSelectorBtn.onclick = () => updateMessageSender('jmee')
 
 const sendMessage = (e) => {
   e.preventDefault()
@@ -382,7 +359,7 @@ const sendMessage = (e) => {
 
   /* Save message to local storage */
   messages.push(message)
-  localStorage.setItem('messages', JSON.stringify(messages))
+  localStorage.setItem(localStorageKey, JSON.stringify(messages))
 
   /* Add message to DOM */
   chatMessages.innerHTML += createChatMessageElement(message)
@@ -397,7 +374,7 @@ const sendMessage = (e) => {
 chatInputForm.addEventListener('submit', sendMessage)
 
 clearChatBtn.addEventListener('click', () => {
-  localStorage.clear()
+  localStorage.removeItem(localStorageKey)
   chatMessages.innerHTML = ''
 })
 

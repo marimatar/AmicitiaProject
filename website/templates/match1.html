@@ -3,6 +3,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="static/js/profile.js"></script>
 <script>
      function redirectToHome() {
             window.location.href = "{{ url_for('views.home') }}";
@@ -10,18 +11,24 @@
         function redirectToProfilePage() {
             window.location.href = "{{ url_for('views.profileuser') }}";
         }
+         function redirectToLoad() {
+            window.location.href = "{{ url_for('views.load') }}";
+        }
+        function redirectToChat1() {
+            window.location.href = "{{ url_for('views.chat1') }}";
+        }
 </script>
-<script src="static/js/profile.js"></script>
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/match.css') }}" />
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/navbar.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/match.css') }}?v=1.1" />
 
 <head>
-    <title>match1</title>
+    <title>match3</title>
     <div class="topNav">
         <div class="navContent">
             <div class="userSection">
                 <i class="fa fa-user-circle" onclick="redirectToProfilePage()"></i>
                 <span class="username">{{ username }}</span>
+                <button style="font-weight: bold;  letter-spacing: 2px;" onclick="redirectToLoad()">Match</button>
             </div>
             <h2 class="brand">Amicitia</h2>
                 <div class="navButtons">
@@ -34,74 +41,55 @@
 <body>
     <div class="container">
       <div class="card">
-        <img src="https://lh3.googleusercontent.com/ytP9VP86DItizVX2YNA-xTYzV09IS7rh4WexVp7eilIcfHmm74B7odbcwD5DTXmL0PF42i2wnRKSFPBHlmSjCblWHDCD2oD1oaM1CGFcSd48VBKJfsCi4bS170PKxGwji8CPmehwPw=w200-h247-no" alt="Person" class="card__image">
-        <p class="card__name">Lily-Grace Colley</p>
-        <div class="grid-container">
-
+        <img src="{{url_for('static',filename='1 de 3 Avatars Flat/Avatars Set Flat Style-41.png')}}" alt="Person" class="card__image">
+        <p class="card__name">matchateo</p>
           <div class="grid-child-posts">
-            156 Post
+            22 | MALE
           </div>
-
-          <div class="grid-child-followers">
-            1012 Likes
-          </div>
-
+        <div class="Bio">
+            <p class="Interests">Coffee connoisseur and avid hiker</p>
         </div>
-        <ul class="social-icons">
-          <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-          <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-          <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-          <li><a href="#"><i class="fa fa-codepen"></i></a></li>
-        </ul>
-        <button class="btn draw-border">Follow</button>
-        <button class="btn draw-border">Message</button>
+        <div class="Bio">
+            <p>Interests</p>
+            <p class="Interests">Coffee Lover | Hiking | Camping | Outdoors | Travel | Foodie | Yoga/Meditation | Fitness</p>
+        </div>
+
+
+
 
       </div>
       <div class="card">
-        <img src="https://lh3.googleusercontent.com/oUUiPB9sq3ACq4bUaRmo8pgvC4FUpRRrQKcGIBSOsafawZfRpF1vruFeYt6uCfL6wGDQyvOi6Ez9Bpf1Fb7APKjIyVsft7FLGR6QqdRFTiceNQBm1In9aZyrXp33cZi9pUNqjHASdA=s170-no" alt="Person" class="card__image">
-        <p class="card__name">Murray Reeve</p>
-        <div class="grid-container">
-
+        <img src="{{url_for('static',filename='1 de 3 Avatars Flat/Avatars Set Flat Style-37.png')}}" alt="Person" class="card__image">
+        <p class="card__name">mmaru</p>
           <div class="grid-child-posts">
-            305 Post
+            19 | MALE
           </div>
-
-          <div class="grid-child-followers">
-            2643 Likes
-          </div>
-
+        <div class="Bio">
+            <p class="Interests">Artist creating vibrant illustrations inspired by nature</p>
         </div>
-        <ul class="social-icons">
-          <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-          <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-          <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-          <li><a href="#"><i class="fa fa-codepen"></i></a></li>
-        </ul>
-        <button class="btn draw-border">Follow</button>
-        <button class="btn draw-border">Message</button>
+        <div class="Bio">
+            <p>Interests</p>
+            <p class="Interests">Art | Photography | Horses | Travel | Outdoors | Yoga/Meditation | Hiking | Camping</p>
+        </div>
+
       </div>
       <div class="card">
-        <img src="https://lh3.googleusercontent.com/pZwZJ5HIL5iKbA91UGMUIPR0VJWa3K0vOGzDZmY6wU3EJBUdfsby3VEyxU162XxTyOyP3D154tjkr-4Jgcx8lygYUR8eB-jVmld4dsHi1c-mE_A8jKccseAG7bdEwVrcuuk6ciNtSw=s170-no" alt="Person" class="card__image">
-        <p class="card__name">Bianca Serrano</p>
-        <div class="grid-container">
-
-          <div class="grid-child-posts">
-            902 Post
+        <img src="{{url_for('static',filename='1 de 3 Avatars Flat/Avatars Set Flat Style-40.png')}}" alt="Person" class="card__image">
+        <p class="card__name">jmee</p>
+        <div class="grid-child-posts">
+            21 | MALE
           </div>
-
-          <div class="grid-child-followers">
-            1300 Likes
-          </div>
-
+        <div class="Bio">
+            <p class="Interests">Software developer by day, amateur astronomer by night</p>
         </div>
-        <ul class="social-icons">
-          <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-          <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-          <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-          <li><a href="#"><i class="fa fa-codepen"></i></a></li>
-        </ul>
-        <button class="btn draw-border">Follow</button>
-        <button class="btn draw-border">Message</button>
+        <div class="Bio">
+            <p>Interests</p>
+            <p class="Interests">Tech | Anime | Volunteering | Gaming | Film/TV | Travel | Outdoors | Music</p>
+        </div>
       </div>
+      <div class="button-container">
+        <button class="circular-button"><i class="fa fa-check" onclick="redirectToChat1()"></i></button>
+        <button class="circular-button"><i class="fa fa-times"></i></button>
+    </div>
     </div>
 </body>

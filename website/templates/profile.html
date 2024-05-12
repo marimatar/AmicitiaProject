@@ -22,13 +22,13 @@
 
             <h2 class="brand">Amicitia</h2>
                 <div class="navButtons">
-                    <navButton class="fa fa-home" onclick="redirectToHomeCommunity()"></navButton>
+                    <navButton class="fa fa-home" onclick="redirectToHome()"></navButton>
                     <navButton class="fa fa-power-off" onclick=window.location.href='{{ url_for('auth.logout') }}'></navButton>
                 </div>
         </div>
     </div>
 
-    <!-- Profile Section -->
+     <!-- Profile Section -->
     <div class="profile-container">
         <div class="profile-info">
             <div class="profile-picture">
@@ -37,7 +37,7 @@
             <h1 class="Name">{{ username }}</h1>
             <h2 class="Username">{{ age }}</h2>
             <p class="Bio">Something about me...</p>
-            <button id="editProfileBtn">Edit Profile</button>
+            <button id="editProfileBtn" onclick=window.location.href='{{ url_for('auth.edit') }}'>Edit Profile</button>
             <button id="deleteAccountBtn">Delete Account</button>
         </div>
     </div>
@@ -51,8 +51,8 @@
         </div>
     </div>
 <script>
-      function redirectToLoad() {
-            window.location.href = "{{ url_for('views.load') }}";
+      function redirectToHome() {
+            window.location.href = "{{ url_for('views.events') }}";
         }
 </script>
 </body>
