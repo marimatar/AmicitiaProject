@@ -3,6 +3,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="static/js/profile.js"></script>
 <script>
      function redirectToHome() {
             window.location.href = "{{ url_for('views.home') }}";
@@ -10,9 +11,15 @@
         function redirectToProfilePage() {
             window.location.href = "{{ url_for('views.profileuser') }}";
         }
+         function redirectToLoad() {
+            window.location.href = "{{ url_for('views.load') }}";
+        }
+        function redirectToLoad2() {
+            window.location.href = "{{ url_for('views.load2') }}";
+        }
 </script>
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/navbar.css') }}" />
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/match.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/match.css') }}?v=1.1" />
 
 <head>
     <title>match3</title>
@@ -34,74 +41,55 @@
 <body>
     <div class="container">
       <div class="card">
-        <img src="{{url_for('static',filename='1 de 3 Avatars Flat/Avatars Set Flat Style-01.png')}}" alt="Person" class="card__image">
-        <p class="card__name">rumplestiltskin</p>
-        <div class="grid-container">
-
+        <img src="{{url_for('static',filename='1 de 3 Avatars Flat/Avatars Set Flat Style-16.png')}}" alt="Person" class="card__image">
+        <p class="card__name">jennajade</p>
           <div class="grid-child-posts">
-            156 Post
+            22 | FEMALE
           </div>
-
-          <div class="grid-child-followers">
-            1012 Likes
-          </div>
-
+        <div class="Bio">
+            <p class="Interests">Travel enthusiast and photography lover</p>
         </div>
-        <ul class="social-icons">
-          <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-          <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-          <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-          <li><a href="#"><i class="fa fa-codepen"></i></a></li>
-        </ul>
-        <button class="btn draw-border">Follow</button>
-        <button class="btn draw-border">Message</button>
+        <div class="Bio">
+            <p>Interests</p>
+            <p class="Interests">Travel | Photography | Outdoors | Yoga/Meditation | Music | Film/TV | Art | Foodie</p>
+        </div>
+
+
+
 
       </div>
       <div class="card">
-        <img src="{{url_for('static',filename='1 de 3 Avatars Flat/Avatars Set Flat Style-46.png')}}" alt="Person" class="card__image">
-        <p class="card__name">Ella</p>
-        <div class="grid-container">
-
+        <img src="{{url_for('static',filename='1 de 3 Avatars Flat/Avatars Set Flat Style-26.png')}}" alt="Person" class="card__image">
+        <p class="card__name">emilyy</p>
           <div class="grid-child-posts">
-            305 Post
+            19 | FEMALE
           </div>
-
-          <div class="grid-child-followers">
-            2643 Likes
-          </div>
-
+        <div class="Bio">
+            <p class="Interests">Musician with a passion for storytelling through songwriting</p>
         </div>
-        <ul class="social-icons">
-          <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-          <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-          <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-          <li><a href="#"><i class="fa fa-codepen"></i></a></li>
-        </ul>
-        <button class="btn draw-border">Follow</button>
-        <button class="btn draw-border">Message</button>
+        <div class="Bio">
+            <p>Interests</p>
+            <p class="Interests">Music | Books | Film/TV | Yoga/Meditation | Travel | Outdoors | Hiking | Camping</p>
+        </div>
+
       </div>
       <div class="card">
-        <img src="{{url_for('static',filename='1 de 3 Avatars Flat/Avatars Set Flat Style-34.png')}}" alt="Person" class="card__image">
-        <p class="card__name">xOverwatchFanx</p>
-        <div class="grid-container">
-
-          <div class="grid-child-posts">
-            902 Post
+        <img src="{{url_for('static',filename='1 de 3 Avatars Flat/Avatars Set Flat Style-18.png')}}" alt="Person" class="card__image">
+        <p class="card__name">pearlie</p>
+        <div class="grid-child-posts">
+            21 | FEMALE
           </div>
-
-          <div class="grid-child-followers">
-            1300 Likes
-          </div>
-
+        <div class="Bio">
+            <p class="Interests">Yoga instructor spreading mindfulness and positivity</p>
         </div>
-        <ul class="social-icons">
-          <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-          <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-          <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-          <li><a href="#"><i class="fa fa-codepen"></i></a></li>
-        </ul>
-        <button class="btn draw-border">Follow</button>
-        <button class="btn draw-border">Message</button>
+        <div class="Bio">
+            <p>Interests</p>
+            <p class="Interests">Books | Music | Art | Film/TV | Languages | Travel | Photography | Cars</p>
+        </div>
       </div>
+      <div class="button-container">
+        <button class="circular-button"><i class="fa fa-check"></i></button>
+        <button class="circular-button"><i class="fa fa-times" onclick="redirectToLoad2()"></i></button>
+    </div>
     </div>
 </body>

@@ -5,14 +5,17 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="static/js/profile.js"></script>
 <script>
-     function redirectToHome() {
-            window.location.href = "{{ url_for('views.home') }}";
+      function redirectToHome() {
+            window.location.href = "{{ url_for('views.events') }}";
         }
         function redirectToProfilePage() {
             window.location.href = "{{ url_for('views.profileuser') }}";
         }
-         function redirectToLoad() {
+        function redirectToLoad() {
             window.location.href = "{{ url_for('views.load') }}";
+        }
+        function redirectToChat() {
+            window.location.href = "{{ url_for('views.chat') }}";
         }
 </script>
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/navbar.css') }}" />
@@ -29,7 +32,7 @@
             </div>
             <h2 class="brand">Amicitia</h2>
                 <div class="navButtons">
-                    <navButton class="fa fa-home" onclick="redirectToHomeCommunity()"></navButton>
+                    <navButton class="fa fa-home" onclick="redirectToHome()"></navButton>
                     <navButton class="fa fa-power-off" onclick=window.location.href='{{ url_for('auth.logout') }}'></navButton>
                 </div>
         </div>
@@ -85,7 +88,7 @@
         </div>
       </div>
       <div class="button-container">
-        <button class="circular-button"><i class="fa fa-check"></i></button>
+        <button class="circular-button"><i class="fa fa-check" onclick="redirectToChat()"></i></button>
         <button class="circular-button"><i class="fa fa-times"></i></button>
     </div>
     </div>
