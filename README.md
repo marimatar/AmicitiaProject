@@ -6,7 +6,7 @@ This project is a web application built using Flask, a lightweight web framework
 ## Installation
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
+   git clone <[repository-url](https://github.com/marimatar/AmicitiaProject.git)>
    cd <repository-folder>
 2. Install dependencies
    ```bash
